@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main-page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <title>Главнная страница</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item item">
+                    <a href="" class="item active d-flex align-items-center">
+                        <i class="bi bi-house-door-fill me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/ production.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-grid me-2"></i>
+                        <span class="nav-production">Производство</span><span class="nav-shop weq">Цех</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/employees.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-people me-2"></i>
+                        <span class="nav-production">Сотрудники</span><span class="nav-shop">Персонал</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/ finance.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/orders.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span>  Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/clients.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                      <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                      <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Контент -->
+  <div class="main-container">
+    <div class="container">
+        <div class="content-list">
+            <div class="content p-4">
+                <h2 class="primy-w1">Уведомления</h2>
+            </div>
+            <div class="calendar">
+                <img src="../img/calendar-pic.png" width="20px" alt="calendar icon">
+                <input type="text" class="form-control" id="date-range-picker" aria-describedby="date-range-icon">
+                <img class="rotate-180 " src="../img/arrow-down.png" alt="">
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="requests">
+                <h4>Запросы на авансовый платеж</h4>
+                <p class="req-decs">
+                    <span id="activeTab" class="active">Активный</span>
+                    <span id="historyTab">История</span>
+                </p>
+                <div id="activeRequests">
+                    <div  class="profile-all">
+                        <div class="month-reg">
+                            <p class="dec">31дек, 2023</p>
+                            <div class="prof-reg">
+                                <div class="reg-name">
+                                    <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                    <div class="reg-title">
+                                        <h5>Жибек Уланов</h5>
+                                        <p>Швея</p>
+                                    </div>
+                                </div>
+                                <div class="ellipse">
+                                    <img src="../img/Ellipse 21.png" alt="" width="8px" height="8px">
+                                    <p>15:47</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="message">1000 c</h6>
+                        <form class="disable">
+                            <button type="submit" class="disable-btn">Отключить</button>
+                            <span class="confirmed">
+                                <img src="../img/Component 1.png" alt="">На потверждении
+                            </span>
+                        </form>
+                    </div>
+                    <div class="profile-pop">
+                        <div class="prof-reg">
+                            <div class="reg-name">
+                                <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                <div class="reg-title">
+                                    <h5>Жибек Уланов</h5>
+                                    <p>Швея</p>
+                                </div>
+                            </div>
+                            <div class="ellipse">
+                                <img src="../img/Ellipse 21.png" alt="" width="8px" height="8px">
+                                <p>15:47</p>
+                            </div>
+                        </div>
+                    
+                    <h6 class="message">1000 c</h6>
+                    <form class="disable">
+                        <button type="submit" class="disable-btn">Отключить</button>
+                        <button type="submit" class="disable-btn-blue">Потвердить</button>
+                    </form>
+                  </div>
+                  <div class="profile-pop">
+                    <div class="prof-reg">
+                        <div class="reg-name">
+                            <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                            <div class="reg-title">
+                                <h5>Жибек Уланов</h5>
+                                <p>Швея</p>
+                            </div>
+                        </div>
+                        <div class="ellipse">
+                            <img src="../img/Ellipse 21.png" alt="" width="8px" height="8px">
+                            <p>15:47</p>
+                        </div>
+                    </div>
+                
+                <h6 class="message">1000 c</h6>
+                <form class="disable">
+                    <button type="submit" class="disable-btn">Отключить</button>
+                    <button type="submit" class="disable-btn-blue">Потвердить</button>
+                </form>
+              </div>
+                </div>
+
+     
+              
+                <div>
+                    <div id="historyRequests" class="profile-pop" style="display: none;">
+                        <p class="dec">30дек, 2023</p>
+                        <div class="prof-reg">
+                            <div class="reg-name">
+                                <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                <div class="reg-title">
+                                    <h5>Алия Касымова</h5>
+                                    <p>Швея</p>
+                                </div>
+                            </div>
+                            <div class="ellipse">
+                                <h6 class="money">1000c</h4>
+                                <p class="time">15:47</p>
+                            </div>
+                        </div>
+                        <hr class="line">
+                        <div class="prof-reg">
+                            <div class="reg-name">
+                                <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                <div class="reg-title">
+                                    <h5>Алия Касымова</h5>
+                                    <p>Швея</p>
+                                </div>
+                            </div>
+                            <div class="ellipse">
+                                <h6 class="money">1000c</h4>
+                                <p class="time">15:47</p>
+                            </div>
+                        </div>
+                        <hr class="line">
+                        <div class="prof-reg">
+                            <div class="reg-name">
+                                <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                <div class="reg-title">
+                                    <h5>Алия Касымова</h5>
+                                    <p>Швея</p>
+                                </div>
+                            </div>
+                            <div class="ellipse">
+                                <h6 class="money">1000c</h4>
+                                <p class="time">15:47</p>
+                            </div>
+                        </div>
+                        <hr class="line">
+                        <div class="prof-reg">
+                            <div class="reg-name">
+                                <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                <div class="reg-title">
+                                    <h5>Алия Касымова</h5>
+                                    <p>Швея</p>
+                                </div>
+                            </div>
+                            <div class="ellipse">
+                                <h6 class="money">1000c</h4>
+                                <p class="time">15:47</p>
+                            </div>
+                        </div>
+                        <p class="dec">30дек, 2023</p>
+                        <div class="prof-reg">
+                            <div class="reg-name">
+                                <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                                <div class="reg-title">
+                                    <h5>Алия Касымова</h5>
+                                    <p>Швея</p>
+                                </div>
+                            </div>
+                            <div class="ellipse">
+                                <h6 class="money">1000c</h4>
+                                <p class="time">15:47</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-order">
+                <div class="order-list">
+                    <h4 class="primy-w5">Запросы на добавление
+                        в штат</h4>
+                </div>
+                <p class="desc-w6">31 дек, 2023</p>
+                <div class="order-avater">
+                    <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                    <div>
+                        <h5 class="primy-w6">Оля Морозова</h5>
+                        <p class="desc-w7">Технолог</p>
+                    </div>
+                </div>
+                <form class="disable">
+                    <button type="submit" class="disable-btn">Отключить</button>
+                    <button type="submit" c class="disable-btn-blue">Принять</button>
+                </form>
+                <hr>
+                <div>
+                    <div class="order-avater">
+                        <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                        <div>
+                            <h5 class="primy-w6">Оля Морозова</h5>
+                            <p class="desc-w7">Технолог</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="disable">
+                    <button type="submit" class="disable-btn">Отключить</button>
+                    <button type="submit" c class="disable-btn-blue">Принять</button>
+                </form>
+                <div>
+                    <hr>
+                    <div class="order-avater">
+                        <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                        <div>
+                            <h5 class="primy-w6">Оля Морозова</h5>
+                            <p class="desc-w7">Технолог</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="disable">
+                    <button type="submit" class="disable-btn">Отключить</button>
+                    <button type="submit" c class="disable-btn-blue">Принять</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+        <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../js/main-page.js"></script>
+    <script>
+        $('#date-range-picker').daterangepicker({
+            opens: 'right',
+            locale: {
+                format: 'DD.MM.YYYY',
+                daysOfWeek: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                firstDay: 1
+            },
+            startDate: '01.12.2023',
+            endDate: '12.12.2023',
+            autoApply: true,
+            singleDatePicker: false,
+            linkedCalendars: false,
+            showCustomRangeLabel: false
+        }, function (start, end, label) {
+
+            $('.daterangepicker td.end-date').removeClass('end-date');
+
+            $('td.active.end-date').removeClass('active').addClass('end-date');
+        });
+
+
+        $('#date-range-picker').on('show.daterangepicker', function () {
+            $('img[src="./img/arrow-down.png"]').addClass('rotate-180');
+        });
+
+        $('#date-range-picker').on('hide.daterangepicker', function () {
+            $('img[src="./img/arrow-down.png"]').removeClass('rotate-180');
+        });
+
+
+    </script>
+
+</body>
+
+</html>

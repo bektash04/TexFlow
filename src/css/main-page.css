@@ -1,0 +1,243 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+.modal-body {
+  display: flex;
+  column-gap: 21px;
+}
+.requests {
+  border-radius: 20px;
+  padding: 20px;
+  width: 520px;
+  height: 805px;
+  background: var(--belyy);
+}
+
+.profile-all {
+  margin-bottom: 15px;
+}
+.requests h4 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.modal-order {
+  border-radius: 20px;
+  padding: 20px;
+  width: 520px;
+  height: 805px;
+  background: var(--belyy);
+}
+
+.reg-name {
+  display: flex;
+  column-gap: 10px;
+}
+
+.reg-title h5 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: start;
+  color: var(--black);
+}
+.reg-title p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  text-align: start;
+  color: var(--seryy4);
+  margin-top: -10px;
+}
+
+.dec {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: start;
+  color: var(--seryy4);
+}
+.prof-reg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.message {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: start;
+  color: var(--black);
+  margin-left: 30px;
+  margin-top: -10;
+}
+.disable {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.disable-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--error-red);
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 235px;
+  height: 36px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--error-red);
+  background: none;
+}
+.confirmed {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--oranzhevyy);
+}
+
+.disable-btn-blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--osnovnoy-siniy);
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 235px;
+  height: 36px;
+  background: var(--osnovnoy-siniy);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--belyy);
+}
+.profile-pop {
+  margin-bottom: 15px;
+}
+
+.money {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: var(--osnovnoy-siniy);
+  margin-top: 10px !important;
+}
+.time {
+  margin-top: -10px;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 12px;
+  text-align: start;
+  color: var(--seryy4);
+}
+
+.line{
+  margin-top: -5px !important;
+}
+.req-decs {
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+}
+
+.req-decs span {
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--seryy4); 
+}
+
+.req-decs .active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 36px;
+  border-radius: 50px;
+  padding: 10px 16px;
+  width: 109px;
+  height: 40px;
+  background: var(--prozrachnyy-siniy);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--osnovnoy-siniy);
+  font-weight: bold;
+  color: var(--osnovnoy-siniy); 
+}
+
+
+@media (max-width: 1400px) {
+    .requests,
+    .modal-order{
+      width: 100%;
+    }
+}
+@media (max-width: 1200px) {
+ 
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+}
+
+@media (max-width: 480px) {
+  .modal-body{
+    padding:  0 15px;
+  }.calendar{
+    width: 100%;
+    margin-left: 25px !important;
+  }
+
+  .content-list{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 425px) {
+
+}
+
+@media (max-width: 375px) {
+
+}

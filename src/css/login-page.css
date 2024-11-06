@@ -1,0 +1,91 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+
+
+.registration-contaoiner {
+  display: flex;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.form-pass {
+  list-style: none;
+}
+.form-pass a {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: var(--osnovnoy-siniy);
+  margin-left: 340px;
+
+}
+.login-link {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: var(--seryy4);
+  margin-left: 20px;
+}
+.login-link a {
+    text-decoration: none;
+  color: var(--osnovnoy-siniy);
+
+}
+
+
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+}
+
+@media (max-width: 480px) {
+  .form-pass a {
+    margin-left: 250px !important;
+  }
+}
+
+@media (max-width: 425px) {
+ 
+}
+
+@media (max-width: 375px) {
+
+
+  
+}
+
+@media (max-width: 320px) {
+
+
+  
+}

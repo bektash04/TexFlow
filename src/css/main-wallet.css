@@ -1,0 +1,151 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+.container{
+    position: relative;
+}
+
+.natification{
+  top: -35% !important;
+}
+
+
+.setting-back{
+    position: absolute;
+    top: -15%;
+}
+
+.settings-back-main{
+  position: absolute;
+  top:  -15%;
+
+}
+
+
+.wallet-title {
+  margin-top: 150px;
+  margin-bottom: 29px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  text-align: start;
+  color: var(--black);
+}
+.main-wallet {
+  display: flex;
+  column-gap: 20px;
+}
+
+.statistic {
+  border-radius: 14px;
+  padding: 16px;
+  width: 360px;
+  height: 147px;
+  background: var(--belyy);
+}
+.sattis-wallet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wall-box {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: var(--seryy5);
+}
+.box-num-1 {
+  margin-top: 8px;
+}
+.box-num {
+  border-radius: 5px;
+  width: 104px;
+  height: 36px;
+  background: var(--osnovnoy-siniy);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  color: var(--belyy);
+}
+
+.wallet-content {
+  border-radius: 20px;
+  width: 676px;
+  background: var(--belyy);
+}
+.wallet-content h4 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+}
+
+@media (max-width: 1200px) {
+    
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+  .natification{
+    top: -25% !important;
+  }
+  
+  .main-wallet{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .wallet-content{
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .statistic{
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .natification{
+    display: none;
+  }
+  .setting-back{
+    top: -5%;
+}
+
+  .wallet-title {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 425px) {
+
+}
+
+@media (max-width: 375px) {
+
+}

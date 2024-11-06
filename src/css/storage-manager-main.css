@@ -1,0 +1,302 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+
+.content-name {
+  margin-top: 120px;
+  margin-left: -40px;
+}
+.story-manager {
+  border-radius: 20px;
+  padding: 20px;
+  width: 1060px;
+  background: var(--belyy);
+}
+.order-text {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.inventory-portal {
+  border: 1px solid var(--osnovnoy-siniy);
+  border-radius: 20px;
+  padding: 16px;
+  width: 1020px;
+  background: var(--seryy1);
+  margin-bottom: 36px;
+}
+.tab-pane-text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  text-align: start;
+  color: var(--black);
+}
+.tab-pane-text span {
+  border-radius: 50px;
+  padding: 10px 12px;
+  width: 109px;
+  height: 26px;
+  background: #cc00922e;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  color: var(--prozrachnyy-rozovyy);
+}
+.content-back {
+  margin-top: 75px;
+}
+.content-list {
+  width: 1060px;
+}
+.main-manager {
+  display: flex;
+  column-gap: 20px;
+}
+.manager-list {
+  border-radius: 14px;
+  padding: 16px;
+  width: 520px;
+  background: var(--belyy);
+}
+.manager-list h4 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 26px;
+  text-align: start;
+  color: var(--black);
+  margin-top: 8px;
+}
+.manager-link p {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: var(--seryy5);
+}
+
+.manager-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.manager-link a {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: var(--osnovnoy-siniy);
+}
+
+.main-block {
+  width: 988px;
+
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--belyy);
+}
+
+.block-title {
+  margin-bottom: 12px;
+}
+
+.purchase-btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  height: 50px;
+  background: var(--osnovnoy-siniy);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--belyy);
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important;
+  margin-top: 30px !important;
+}
+#his {
+  border: none !important;
+  margin-bottom: 10px !important;
+}
+.nav-tabs li{
+  list-style: none;
+}
+
+@media (max-width: 1400px) {
+  .story-manager,
+  .inventory-portal,
+  .main-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .table-status table,
+  .table-status thead,
+  .table-status tbody,
+  .table-status th,
+  .table-status td,
+  .table-status tr {
+    display: block;
+    height: auto !important;
+  }
+  .table-status table thead tr {
+    border: none;
+  }
+  .daterangepicker .calendar-table {
+    margin-left: -80px !important;
+  }
+  .stock-status {
+    margin-bottom: 50px;
+  }
+
+  .table-status table tbody tr {
+    text-align: end;
+    padding: 16px;
+    border-radius: 16px;
+    width: 100% !important;
+    background: var(--belyy) !important;
+  }
+  .table-status table tbody tr:hover {
+    background: none !important;
+    cursor: default !important;
+  }
+  .table-status th {
+    display: none;
+  }
+  .table-status td {
+    position: relative;
+    padding-left: 50%;
+    text-align: end;
+    border: none;
+    margin-top: -15px;
+  }
+  .table-status td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--seryy4);
+  }
+  .table-status-tbodys {
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: 12px !important;
+  }
+  #info-1,
+  #info-2,
+  #info-3,
+  #his,
+  #info-4:hover {
+    background: var(--belyy) !important;
+    cursor: default !important;
+    border: none;
+  }
+
+  .main-block {
+    background: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-tabs {
+    display: flex;
+    justify-content: space-around;
+  }
+  .manager-list h4{
+    font-size: 18px;
+  }
+  .manager-link{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+  .manager-link a{
+    font-size: 12px;
+  }
+  .manager-link a svg{
+    width: 20px;
+    height: 20px;
+  }
+  .content-name{
+    font-size: 20px;
+  }
+  .nav-tabs li{
+    list-style: none;
+  }
+  .nav-tabs li button{
+    list-style: none;
+    font-family: var(--font-family);
+    font-weight: 500 ;
+    font-size: 16px ;
+    text-align: center;
+    color: var(--black);
+  }
+  .table-status {
+    overflow: visible;
+    background: var(--belyy) !important;
+    margin-bottom: 30px;
+
+  }
+  .order-tex{
+      padding: 20px;
+  }
+
+  .inventory-portal{
+    border: none;
+    padding: 0;
+    margin-bottom: 60px;
+  }
+  .tab-pane-text{
+    font-size: 20px;
+    padding: 20px ;
+  }
+ .block-title{
+  font-size: 20px;
+  margin-top: -150px;
+ }
+}
+
+
+@media (max-width: 425px) {
+}
+
+@media (max-width: 375px) {
+}

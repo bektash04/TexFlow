@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/create-order-card.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <title>Заказы</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/production.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-grid me-2"></i>
+                        <span class="nav-production">Производство</span><span class="nav-shop weq">Цех</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/employees-2.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-people me-2"></i>
+                        <span class="nav-production">Сотрудники</span><span class="nav-shop">Персонал</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/finance.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item item">
+                    <a href="" class="item active d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                      <span>  Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/create-new-order.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                      <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Контент -->
+    
+        <div class="main-container">
+            <div class="container">
+                <img class="card-back" src="../img/back.png" alt="">
+                <div class="content-list card-list">
+                    <div class="content p-4">
+                        <h2 class="primy-titile">Заказ №13 <span class="primy-titile-w-1">производство</span></h2>
+                        <p class="primy-cod">Трек код: <span>ЛК15012024#1111</span></p>
+                    </div>
+                    <div class="menu-dots" id="menuDots">&#x22EE;</div>
+                    <div class="card-btns">
+                        <button class="btn btn-clients__make" id="makeopenModalFus">Запустить производство</button>
+                        <button class="btn btn-clients__red" id="openModal">Удалить</button>
+                        <button class="btn btn-clients" id="openInviteModal">Редактировать</button>
+                    </div>
+                </div>
+                <!-- Модальное окно -->
+               
+                <div class="modal" id="makeNewsletterModal" style="display: none;">
+                    <div class="modal-dialog modal__cont">
+                   
+                            <div class="modal-header">
+                                <h5 class="modal-title">Удалить сотрудника ?</h5>
+                                <button type="button" class="btn-close arrow-next" id="makeCloseModal"></button>
+                            </div>
+                            <form>
+                                <div class="modal-desc">
+                                    <p>Нажимая на кнопку “Удалить”, все данные заказа будут удалены из базы навсегда</p>
+                                </div>
+                                <div class="modal__btns">
+                                    <button type="button" class="btn btn-secondary" id="closeFooter">Отмена</button>
+                                    <button type="button" class="btn btn-primary btn-make-red">Запустить</button>
+
+                                </div>
+                            </form>
+                    </div>
+                </div>
+
+                <div class="modal" id="newsletterModal" style="display: none;">
+                    <div class="modal-dialog modal__cont">
+                   
+                            <div class="modal-header">
+                                <h5 class="modal-title">Удалить сотрудника ?</h5>
+                                <button type="button" class="btn-close arrow-next" id="closeModal"></button>
+                            </div>
+                            <form>
+                                <div class="modal-desc">
+                                    <p>Нажимая на кнопку “Удалить”, все данные заказа будут удалены из базы навсегда</p>
+                                </div>
+                                <div class="modal__btns">
+                                    <button type="button" class="btn btn-secondary" id="closeFooter">Отмена</button>
+                                    <button type="button" class="btn btn-primary modal-btn">Удалить</button>
+
+                                </div>
+                            </form>
+                    </div>
+                </div>
+                <div class="modal" id="inviteModal" style="display: none;">
+                    <div class="modal-dialog-clinets">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Новый клинет</h5>
+                            <button type="button" class="btn-close" id="closeInviteModal"></button>
+                        </div>
+                        <form class="form-clients">
+                            <ul class="list-clients">
+                                <li class="item-client">ФИО
+                                    <input class="input-client" type="text" name="" id="" placeholder="Введите ФИО клиента">
+                                </li>
+    
+                                <li class="item-client">Номер телефона
+                                    <input class="input-client" type="number" name="" id=""
+                                        placeholder="Введите номер телефона">
+                                </li>
+    
+                                <li class="item-client">Электронная почта
+                                    <input class="input-client" type="email" name="" id=""
+                                        placeholder="Введите электронную почу" required>
+                                </li>
+    
+                                <li class="item-client">Город
+                                    <input class="input-client" type="text" name="" id=""
+                                        placeholder="Введите название города">
+                                </li>
+                            </ul>
+                        </form>
+                        <button type="submit" class="btn btn-primary btn-clinet">Добавить</button>
+                    </div>
+                </div>
+    
+                <div class="card-orders">
+                    <div class="card-profile">
+                        <h4>Футболка с надписью</h4>
+                        <div class="profile-list">
+                            <img src="../img/photo_product.png" alt="" width="200px" height="176px">
+                            <ul class="profile-category">
+                                <li class="profile-item">
+                                    <p class="profile-cot">Категория:</p>
+                                    <p class="prof-col">футболка</p>
+                                </li>
+                                <li class="profile-item">
+                                    <p class="profile-cot">Общее количество: </p>
+                                    <p class="prof-col">4000</p>
+                                </li>
+                                <li class="profile-item">
+                                    <p class="profile-cot">Размеры:</p>
+                                    <p class="prof-col">42, 44, 46, 48</p>
+                                </li>
+                                <li class="profile-item">
+                                    <p class="profile-cot">Дата запуска:</p>
+                                    <p class="prof-col">01.12.2023</p>
+                                </li>
+                                <li class="profile-item">
+                                    <p class="profile-cot">срок сдачи:</p>
+                                    <p class="prof-col">31.12.2024</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <h5>КОММЕНТАРИЙ:</h5>
+                        <hr class="profile-border">
+                        <p class="profile-description">Клиент просит выделить особое внимание на качество товара.</p>
+                    </div>
+                    <div class="clinet-card">
+                        <div class="info-title">
+                            <h4>Клиент</h4>
+                           <a href="">Подробнее <img src="../img/more_arrow.png" alt=""></a>
+                        </div>
+                        <div class="info-card">
+                            <img src="../img/circle_ava.png" alt="" width="24px" height="24px">
+                            <div class="info-name">
+                                <h4>Оля Андреева</h4>
+                                <p>Работает с нами c 01.12.2023</p>
+                            </div>
+                        </div>
+                        <p class="info-contact">КОНТАКТЫ</p>
+                        <p class="bagbe-info"><img src="../img/phone.png" alt="">+7495 654 32 10</p>
+                        <p class="bagbe-info"><img src="../img/mail.png" alt="">libov.costrovs@gmail.com</p>
+                        <p class="bagbe-info"><img src="../img/address.png" alt="">Москва</p>
+    
+                    </div>
+    
+    
+                </div>
+    
+                <div class="details-section">
+                    <div class="content-box mt-3">
+                        <h4>Детали производства</h4>
+                        <div class="box">
+                            <div class="box-title">
+                                <h4><span>0</span>/4000</h4>
+                                <p>Всего проиведено</p>
+    
+                                <h5 class="box-num">4000</h5>
+                                <p>Осталось</p>
+    
+                            </div>
+                            <img src="../img/diagramm.png" alt="">
+                        </div>
+                        <button class="box-btn">Перейти в производство <svg width="25" height="24" viewBox="0 0 25 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_634_28981)">
+                                    <path d="M9.5 6L15.5 12L9.5 18" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_634_28981">
+                                        <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg></button>
+                    </div>
+                    <div class="block mt-3">
+                        <div class="block-1">
+                            <img src="../img/statistic/circle_icons2.png" alt="" width="44px" height="44px">
+                            <p>Количество браков</p>
+                            <h4>0</h4>
+                        </div>
+                        <div class="block-2 ">
+                            <img src="../img/statistic/circle_icons_time.png" alt="" width="44px" height="44px">
+                            <p>Осталось дней до сдачи</p>
+                            <h4>14</h4>
+                        </div>
+                    </div>
+                    <div class="status-container">
+                        <div class="status-header">
+                            <h2>Статус</h2>
+                            <a href="#" class="details-link">Подробнее <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6954_34701)">
+                                  <path d="M9 6.5L15 12.5L9 18.5" stroke="#0062F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_6954_34701">
+                                    <rect width="24" height="24" fill="white" transform="translate(0 0.5)" />
+                                  </clipPath>
+                                </defs>
+                              </svg></a>
+                        </div>
+                        <ul class="status-list">
+                            <li class="status-item active">
+                                <div class="status-item">
+                                    <div class="status-info">
+                                        <span class="status-circle active"></span>
+                                        <p class="status-text">В ожидании</p>
+                                        <p class="status-dates">14:12 / 02.12.2023</p>
+                                    </div>
+                                </div>
+                                <input type="checkbox" checked class="status-checkbox">
+                            </li>
+                            <li class="status-item">
+                                <div class="status-info">
+                                    <span class="status-circle"></span>
+                                    <p class="status-text">Закупка сырья</p>
+                                    <p class="status-date">- - - - -</p>
+                                </div>
+                                <input type="checkbox" class="status-checkbox">
+                            </li>
+                            <li class="status-item">
+                                <div class="status-info">
+                                    <span class="status-circle"></span>
+                                    <p class="status-text">Крой</p>
+                                    <p class="status-date">- - - - -</p>
+                                </div>
+                                <input type="checkbox" class="status-checkbox">
+                            </li>
+                            <li class="status-item">
+                                <div class="status-info">
+                                    <span class="status-circle"></span>
+                                    <p class="status-text">Производство</p>
+                                    <p class="status-date">- - - - -</p>
+                                </div>
+                                <input type="checkbox" class="status-checkbox">
+                            </li>
+                            <li class="status-item">
+                                <div class="status-info">
+                                    <span class="status-circle"></span>
+                                    <p class="status-text">Готов к отправке</p>
+                                    <p class="status-date">- - - - -</p>
+                                </div>
+                                <input type="checkbox" class="status-checkbox">
+                            </li>
+                            <li class="status-item">
+                                <div class="status-info">
+                                    <span class="status-circle"></span>
+                                    <p class="status-text">Выполнен</p>
+                                    <p class="status-date">- - - - -</p>
+                                </div>
+                                <input type="checkbox" class="status-checkbox">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               <div class="nav-dropdown">
+                <div class="colors-category">
+             
+                    <div class="color-list mt-3">
+                        <div class="color-item">
+                            <div class="bagbe-white"></div>
+                            <h4>Зеленый</h4>
+                        </div>
+                        <div class="color-box">
+                            <p>РАЗМЕР</p>
+                            <p>КОЛИЧЕСТВО</p>
+                        </div>
+                        <hr>
+                        <div class="size-row">
+                            <span>42</span>
+                            <p>300</p>
+                        </div>
+                        <hr>
+                        <div class="size-row">
+                            <span>44</span>
+                            <p>300</p>
+                        </div>
+                        <hr>
+                        <div class="size-row">
+                            <span>46</span>
+                            <p>300</p>
+                        </div>
+                        <hr>
+                        <div class="size-row">
+                            <span>44</span>
+                            <p>300</p>
+                        </div>
+                
+                </div>
+                <div class="color-list mt-3">
+                    <div class="color-item">
+                        <div class="bagbe-black"></div>
+                        <h4>Черный</h4>
+                    </div>
+                    <div class="color-box">
+                        <p>РАЗМЕР</p>
+                        <p>КОЛИЧЕСТВО</p>
+                    </div>
+                    <hr>
+                    <div class="size-row">
+                        <span>42</span>
+                        <p>300</p>
+                    </div>
+                    <hr>
+                    <div class="size-row">
+                        <span>44</span>
+                        <p>300</p>
+                    </div>
+                    <hr>
+                    <div class="size-row">
+                        <span>46</span>
+                        <p>300</p>
+                    </div>
+                    <hr>
+                    <div class="size-row">
+                        <span>44</span>
+                        <p>300</p>
+                    </div>
+            
+            </div>
+            <div class="color-list mt-3">
+                <div class="color-item">
+                    <div class="bagbe-blue"></div>
+                    <h4>Синий</h4>
+                </div>
+                <div class="color-box">
+                    <p>РАЗМЕР</p>
+                    <p>КОЛИЧЕСТВО</p>
+                </div>
+                <hr>
+                <div class="size-row">
+                    <span>42</span>
+                    <p>300</p>
+                </div>
+                <hr>
+                <div class="size-row">
+                    <span>44</span>
+                    <p>300</p>
+                </div>
+                <hr>
+                <div class="size-row">
+                    <span>46</span>
+                    <p>300</p>
+                </div>
+                <hr>
+                <div class="size-row">
+                    <span>44</span>
+                    <p>300</p>
+                </div>
+        
+        </div>
+        <div class="color-list mt-3">
+            <div class="color-item">
+                <div class="bagbe-yellow"></div>
+                <h4>Желтый</h4>
+            </div>
+            <div class="color-box">
+                <p>РАЗМЕР</p>
+                <p>КОЛИЧЕСТВО</p>
+            </div>
+            <hr>
+            <div class="size-row">
+                <span>42</span>
+                <p>300</p>
+            </div>
+            <hr>
+            <div class="size-row">
+                <span>44</span>
+                <p>300</p>
+            </div>
+            <hr>
+            <div class="size-row">
+                <span>46</span>
+                <p>300</p>
+            </div>
+            <hr>
+            <div class="size-row">
+                <span>44</span>
+                <p>300</p>
+            </div>
+    
+    </div>
+    <div class="color-list mt-3">
+        <div class="color-item">
+            <div class="bagbe-red"></div>
+            <h4>Красный</h4>
+        </div>
+        <div class="color-box">
+            <p>РАЗМЕР</p>
+            <p>КОЛИЧЕСТВО</p>
+        </div>
+        <hr>
+        <div class="size-row">
+            <span>42</span>
+            <p>300</p>
+        </div>
+        <hr>
+        <div class="size-row">
+            <span>44</span>
+            <p>300</p>
+        </div>
+        <hr>
+        <div class="size-row">
+            <span>46</span>
+            <p>300</p>
+        </div>
+        <hr>
+        <div class="size-row">
+            <span>44</span>
+            <p>300</p>
+        </div>
+    
+    </div>
+    <div class="color-list mt-3">
+    <div class="color-item">
+        <div class="bagbe-white"></div>
+        <h4>Зеленый</h4>
+    </div>
+    <div class="color-box">
+        <p>РАЗМЕР</p>
+        <p>КОЛИЧЕСТВО</p>
+    </div>
+    <hr>
+    <div class="size-row">
+        <span>42</span>
+        <p>300</p>
+    </div>
+    <hr>
+    <div class="size-row">
+        <span>44</span>
+        <p>300</p>
+    </div>
+    <hr>
+    <div class="size-row">
+        <span>46</span>
+        <p>300</p>
+    </div>
+    <hr>
+    <div class="size-row">
+        <span>44</span>
+        <p>300</p>
+    </div>
+    
+    </div>
+            </div>
+            <div class="process mt-3">
+                    <div class="process-list">
+                            <h4>Технический процесс  </h4>
+                            <a href="">Редактировать<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6954_17035)">
+                                  <path d="M9 6L15 12L9 18" stroke="#0062F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_6954_17035">
+                                    <rect width="24" height="24" fill="white" />
+                                  </clipPath>
+                                </defs>
+                              </svg></a>
+                    </div>
+                    <div class="process-item">
+                        <p>№ ОПЕРАЦИи</p>
+                        <p>название операции</p>
+                    </div>
+                    <hr>
+                    <div class="process-number">
+                        <span>№ 1</span>
+                        <p>ВЫКРОЙКА</p>
+                    </div>
+                    <hr>
+                    <div class="process-number">
+                        <span>№ 2</span>
+                        <p>ПОШИВ</p>
+                    </div>
+                    <hr>
+                    <div class="process-number">
+                        <span>№ 3</span>
+                        <p>ОТК</p>
+                    </div>
+                    <hr>
+                    <div class="process-number">
+                        <span>№ 4</span>
+                        <p>УТЮГ</p>
+                    </div>
+                    <hr>
+                    <div class="process-number">
+                        <span>№ 5</span>
+                        <p>УАКОВКА</p>
+                    </div>
+                    <hr>
+            </div> 
+    
+               </div>
+    
+            </div>
+        </div>
+        <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/create-order-card.js"></script>
+</body>
+
+</html>

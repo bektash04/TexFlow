@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/warehouse-profile.css">
+    <link rel="stylesheet" href="../css/employees-2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../pages/main-admin.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item item">
+                    <a href="#" class="item active   d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span>Профиль</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/main-wallet.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Кошолек</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/main-setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Контент -->
+       <div class="main-container">
+        <div class="container">
+            <div class="content-list">
+                <div class="content p-4">
+                    <img src="../img/back.png" alt="" width="40px" height="40px">
+                    <h2 class="process-box">Складовщик — Оля Николевна
+                    </h2>
+                </div>
+                <div class="menu-dotsProfile" id="menuDots">&#x22EE;</div>
+                <div class="profile-btns">
+                    <button class="btn-red">Выйти</button>
+                </div>
+            </div>
+
+            <div class="profile-list">
+                <div class="person  mt-3">
+                    <img class="person__profile" src="../img/circle_ava_profile.png" alt="" width="174px"
+                        height="174px">
+                    <div>
+                        <h2 class="person__title">Оля Николевна</h2>
+                        <p class="person__desc">Шфея</p>
+                    </div>
+                    <div>
+                        <p class="person__contact">КОНТАКТЫ</p>
+                        <span class="person__phone"><img src="../img/phone.png" alt="" width="24px"
+                                height="24px">+996502800202</span>
+                        <p class="person__in"><span>ИИН </span>778313903</span></p>
+                        <span class="person__phone"><img src="../img/calendar-three.png" alt="" width="24px"
+                                height="24px">16.02.00</span>
+                    </div>
+                </div>
+                <div class="result mt-3">
+                    <h2 class="result__title">Результаты работ</h2>
+                    <div class="resilt__arrow-left">
+                        <svg width="87" height="55" viewBox="0 0 87 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M86.7429 2.14651L52.1313 1.48829L1.33647 54.5849" stroke="#636363" />
+                        </svg>
+                        <p>1250<span>успешно произведеных товаров </span></p>
+                    </div>
+                    <svg width="141" class="result__circle" height="141" viewBox="0 0 141 141" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="70.5" cy="70.5" r="70.5" fill="#0062F5" />
+                        <path d="M141 70.5C141 63.102 139.836 55.7502 137.549 48.7143L70.5 70.5H141Z" fill="#F5001D" />
+                    </svg>
+                    <div class="resilt__arrow-right">
+                        <p>4<span>брак </span></p>
+                        <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.500201 45.0006L15.9996 0.999373L31.4997 1.00002" stroke="#636363" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="profile-text mt-3">
+                    <p>Уведомления </p>
+                    <p> Написать письмо директору</p>
+                    <p> Написать письмо технологу</p>
+                    <p> Написать письмо конструктору</p>
+
+                </div>
+            </div>
+
+            <div class="profile-container mt-4">
+                <div class="profile-wrapper">
+                    <div class="profile-content">
+                        <h4 class="tools-text">Уведомления</h4>
+                        <hr class="zoq">
+                        <p class="content-dish"> <input type="checkbox">Получать новостные и информационные письма</p>
+                        <p class="content-dish"> <input type="checkbox">Получать маркетинговые письма с предложениями
+                        </p>
+                        <p class="content-dish"> <input type="checkbox">Получать письма о работе системы</p>
+                        <p class="content-dish"> <input type="checkbox">Показывать всплывающие уведомления о новостях
+                        </p>
+                        <button class="content-save">Сохранить</button>
+                    </div>
+                    <div class="profile-layout ">
+                        <h4 class="tools-text">Уведомления</h4>
+                        <hr class="zoq">
+                        <button class="layout-btn">Выгрузить мои данные</button>
+                        <p class="layout-text">Посмотреть текст пользовательского соглашения можно здесь</p>
+                        <p class="layout-text">Посмотреть текст лицензионного договора можно здесь.</p>
+                        <button class="layout-data-btn">Запрос на блокировку моих данные</button>
+
+                    </div>
+                </div>
+                <div class="profile-setting ">
+                    <h4 class="tools-text">Настройки</h4>
+                    <hr class="zoq">
+                    <ul class="block bolck-1">
+                        <li class="setting-bagbe">
+                            <p>Имя</p>
+                            <input type="text">
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>Язык</p>
+                            <input type="text">
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>Город</p>
+                            <input type="text">
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>информация о себе</p>
+                            <textarea name="" id=""></textarea>
+                        </li>
+                    </ul>
+                    <h4 class="tools-text">Изменить пароль</h4>
+                    <hr class="zoq">
+                    <ul class="block bolck-2">
+                        <li class="setting-bagbe">
+                            <p>Старый пароль</p>
+                            <input type="password">
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>Новый пароль</p>
+                            <input type="password">
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>Подтвердите пароль</p>
+                            <input type="password">
+                        </li>
+                    </ul>
+                    <h4 class="tools-text">Изменить номер мобильного</h4>
+                    <hr class="zoq">
+                    <ul class="block bolck-3">
+                        <li class="setting-bagbe">
+                            <p>Текущий номер</p>
+                            <p class="num">996559888184</p>
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>Новый номер</p>
+                            <p class="number-1">+</p>
+                            <input type="text" class="number-2">
+                        </li>
+                        <li class="setting-bagbe">
+                            <span>На новый номер будет выслано sms-сообщение с кодом подтверждения</span>
+                        </li>
+                    </ul>
+                    <h4 class="tools-text">Изменить номер мобильного</h4>
+                    <hr class="zoq">
+                    <ul class="block bolck-4">
+                        <li class="setting-bagbe">
+                            <p>Текущий email</p>
+                            <p class="email">ariet.ernisov.00@gmail.com</p>
+                        </li>
+                        <li class="setting-bagbe">
+                            <p>Новый email</p>
+                            <input type="email">
+                        </li>
+                        <li class="setting-bagbe">
+                            <span>На новый email будет выслано sms-сообщение с кодом подтверждения</span>
+                        </li>
+                    </ul>
+                    <h4 class="tools-text">Управление аккаунтом</h4>
+                    <hr class="zoq">
+                    <ul class="block bolck-5">
+                        <li class="setting-bagbe">
+                            <p>Удаление аккаунта</p>
+                            <button>Удалить аккаунт</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       </div>
+        <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/warehouse-profile.js"></script>
+</body>
+
+</html>

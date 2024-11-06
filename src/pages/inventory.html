@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/inventory.css">
+    <link rel="stylesheet" href="../css/orders-2.css">
+    <link rel="stylesheet" href="../css/employees.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item item" style="display: block;">
+                    <a href="#" class="item active d-flex align-items-center" id="toggleSubMenu">
+                        <i class="bi bi-grid-fill me-2"></i>
+                        <span class="nav-production">Управление цехом</span><span class="nav-shop weq">Цех</span>
+                        <i class="bi bi-chevron-down ms-auto" id="arrow"></i>
+                    </a>
+                </li>
+                <li class="nav-item sub-item" style="display: block;">
+                    <a href="#" class="nav-link active-inven  d-flex align-items-center">
+                        Производство
+                    </a>
+                </li>
+                <li class="nav-item sub-item" style="display: block;">
+                    <a href="#" class="nav-link as-active d-flex align-items-center">
+                        • Склад
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/employees.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-people me-2"></i>
+                        <span class="nav-production">Сотрудники</span><span class="nav-shop">Персонал</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/finance.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="../pages/orders.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span>  Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/clients.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                        <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <!-- Контент -->
+   <div class="main-container">
+    <div class="container">
+        <div class="content-list">
+            <div class="content p-4">
+                <h2 class="primy-w1">Запасы сырья на складе</h2>
+            </div>
+        </div>
+
+        <div>
+            <div class="story-manager table-status stock-status mt-4">
+                <h3 class="order-tex">Заказ</h3>
+                <ul class="nav-tabs d-flex gap-2 mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="first-link active" id="active-tab" data-bs-toggle="tab"
+                            data-bs-target="#activeOrders" type="button" role="tab" aria-controls="activeOrders"
+                            aria-selected="true">Активные</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="first-link" id="completed-tab" data-bs-toggle="tab"
+                            data-bs-target="#completedOrders" type="button" role="tab"
+                            aria-controls="completedOrders" aria-selected="false">Истроия покупок</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="activeOrders" role="tabpanel"
+                        aria-labelledby="active-tab">
+                        <div class="inventory-portal">
+                            <h4 class="tab-pane-text">Заказ #8 <span>закупка сырья</span></h4>
+                            <div class="col-list">
+                                <div class="main-block mt-4">
+                                    <h4 class="block-title">Ткань «Хлопок»</h4>
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="table-status-header table-light">
+                                            <tr>
+                                                <th scope="col">№</th>
+                                                <th scope="col">ЦВЕТА</th>
+                                                <th scope="col">КОД ЦВЕТА</th>
+                                                <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                <th scope="col">КОЛИЧЕСТВО</th>
+                                                <th scope="col">ЦЕНА</th>
+                                                <th scope="col">КОММЕНТАРИЙ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTable"  class="table-status-tbodys">
+                                            <tr id="info-1" data-id="1">
+                                                <td data-label="№" scope="row">1</td>
+                                                <td data-label="Цвета">белый</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+                                            <tr id="info-1" data-id="2">
+                                                <td data-label="№" scope="row">2</td>
+                                                <td data-label="Цвета">зеленый</td>
+                                                <td data-label="Код цвета">#142</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+    
+    
+                                            </tr>
+                                            <tr  id="his">
+                                                <td data-label="№" scope="row">3</td>
+                                                <td data-label="Цвета">черный</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">40000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+    
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary purchase-btn" id="openModalInven">Закупить
+                                        ткань</button>
+                                    <!-- Модальное окно -->
+                                    <div class="modalInvenTory" id="newsletterModalInven" style="display: none;">
+                                        <div class="modal-Inven  stock-status">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title tab-pane-text">Покупка ткани для Заказа #8
+                                                    <br class="tab-pane-br"><span>закупка
+                                                        сырья</span></h4>
+                                                <button type="button" class="btn-close arrow-next"
+                                                    id="closeModalInven"></button>
+                                            </div>
+                                            <div class="inven-content">
+                                                <table class="table  table-bordered table-hover">
+                                                    <div class="inven-list">
+                                                        <h6>Ткань</h6>
+                                                        <input type="text" placeholder="Введите название">
+                                                    </div>
+                                                    <thead class="table-status-header table-light">
+                                                        <tr>
+                                                            <th scope="col">№</th>
+                                                            <th scope="col">ЦВЕТА</th>
+                                                            <th scope="col">КОД ЦВЕТА</th>
+                                                            <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                            <th scope="col">КОЛИЧЕСТВО</th>
+                                                            <th scope="col">ЦЕНА</th>
+                                                            <th scope="col">КОММЕНТАРИЙ</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="employeeTable"  class="table-status-tbodys">
+                                                        <tr id="info-1" data-id="1">
+                                                            <td data-label="ID" scope="row">1</td>
+                                                            <td data-label="Цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Код цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Езменение" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Комментарий" class="inven-input"><span><input type="text"></span></td>
+                                                        </tr>
+                                                        <tr id="info-1" data-id="1">
+                                                            <td data-label="ID" scope="row">2</td>
+                                                            <td data-label="Цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Код цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Езменение" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Комментарий" class="inven-input"><span><input type="text"></span></td>
+                                                        </tr>
+                                                        <tr id="his">
+                                                            <td data-label="ID" scope="row">3</td>
+                                                            <td data-label="Цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Код цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Езменение" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Комментарий" class="inven-input"><span><input type="text"></span></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <button class="btn btn-primary purchase-btnModal"
+                                                id="openModalInven">Потвердить покупку ткани</button>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-list">
+                                <div class="main-block mt-4">
+                                    <h4 class="block-title">Фурнитура</h4>
+                                     <table class="table table-bordered table-hover">
+                                    <thead class="table-status-header table-light">
+                                        <tr>
+                                            <th scope="col">№</th>
+                                            <th scope="col">ЦВЕТА</th>
+                                            <th scope="col">КОД ЦВЕТА</th>
+                                            <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                            <th scope="col">КОЛИЧЕСТВО</th>
+                                            <th scope="col">ЦЕНА</th>
+                                            <th scope="col">КОММЕНТАРИЙ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="employeeTable"  class="table-status-tbodys">
+                                        <tr id="info-1" data-id="1">
+                                            <td data-label="№" scope="row">1</td>
+                                            <td data-label="Цвета">белый</td>
+                                            <td data-label="Код цвета">#152</td>
+                                            <td data-label="Ед. изменение">метр</td>
+                                            <td data-label="Количество">200</td>
+                                            <td data-label="Цена">20000 сом</td>
+                                            <td data-label="Комментарий">4 рулона</td>
+                                        </tr>
+                                        <tr id="info-1" data-id="2">
+                                            <td data-label="№" scope="row">2</td>
+                                            <td data-label="Цвета">зеленый</td>
+                                            <td data-label="Код цвета">#142</td>
+                                            <td data-label="Ед. изменение">метр</td>
+                                            <td data-label="Количество">200</td>
+                                            <td data-label="Цена">20000 сом</td>
+                                            <td data-label="Комментарий">4 рулона</td>
+
+
+                                        </tr>
+                                        <tr  id="his">
+                                            <td data-label="№" scope="row">3</td>
+                                            <td data-label="Цвета">черный</td>
+                                            <td data-label="Код цвета">#152</td>
+                                            <td data-label="Ед. изменение">метр</td>
+                                            <td data-label="Количество">200</td>
+                                            <td data-label="Цена">40000 сом</td>
+                                            <td data-label="Комментарий">4 рулона</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                    <button class="btn btn-primary purchase-btn" id="openModalSubTitile">Закупить
+                                        ткань</button>
+                                    <!-- Модальное окно -->
+                                    <div class="modalInvenTory" id="newsletterModalInvenSubTitile" style="display: none;">
+                                        <div class="modal-Inven  stock-status">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title tab-pane-text">Покупка ткани для Заказа #8
+                                                    <span>закупка
+                                                        сырья</span></h4>
+                                                <button type="button" class="btn-close arrow-next"
+                                                    id="closeModalSubTitile"></button>
+                                            </div>
+                                            <div class="inven-content">
+                                                <table class="table table-bordered table-hover">
+                                                    <div>
+                                                        <h6 class="inven-text">Фурнитура</h6>
+                                                    </div>
+                                                    <thead class="table-status-header table-light">
+                                                        <tr>
+                                                            <th scope="col">№</th>
+                                                            <th scope="col">ЦВЕТА</th>
+                                                            <th scope="col">КОД ЦВЕТА</th>
+                                                            <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                            <th scope="col">КОЛИЧЕСТВО</th>
+                                                            <th scope="col">ЦЕНА</th>
+                                                            <th scope="col">КОММЕНТАРИЙ</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="employeeTable" class="table-status-tbodys">
+                                                        <tr id="info-1" data-id="1">
+                                                            <td data-label="ID" scope="row">1</td>
+                                                            <td data-label="Цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Код цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Езменение" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Комментарий" class="inven-input"><span><input type="text"></span></td>
+                                                        </tr>
+                                                        <tr id="info-1" data-id="2">
+                                                            <td data-label="ID" scope="row">2</td>
+                                                            <td data-label="Цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Код цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Езменение" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Комментарий" class="inven-input"><span><input type="text"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td data-label="ID" scope="row">3</td>
+                                                            <td data-label="Цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Код цвета" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Езменение" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+                                                            <td data-label="Комментарий" class="inven-input"><span><input type="text"></span></td>
+                                                        </tr>
+                                                        <tr class="plus-inven" id="his">
+                                                            <th scope="row"><svg width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_7111_35371)">
+                                                                        <path d="M12.0301 5L12.0117 19"
+                                                                            stroke="#0062F5" stroke-width="2"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                        <path d="M5 12H19" stroke="#0062F5"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_7111_35371">
+                                                                            <rect width="24" height="24"
+                                                                                fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg></th>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <button class="btn btn-primary purchase-btn"
+                                                id="openModalInven">Потвердить покупку ткани</button>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inventory-portal">
+                            <h4 class="tab-pane-text">Заказ #12 <span>закупка сырья</span></h4>
+                            <div class="col-list">
+                                <div class="main-block mt-4">
+                                    <h4 class="block-title">Ткань «Хлопок»</h4>
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="table-status-header table-light">
+                                            <tr>
+                                                <th scope="col">№</th>
+                                                <th scope="col">ЦВЕТА</th>
+                                                <th scope="col">КОД ЦВЕТА</th>
+                                                <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                <th scope="col">КОЛИЧЕСТВО</th>
+                                                <th scope="col">ЦЕНА</th>
+                                                <th scope="col">КОММЕНТАРИЙ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTable"  class="table-status-tbodys">
+                                            <tr id="info-1" data-id="1">
+                                                <td data-label="№" scope="row">1</td>
+                                                <td data-label="Цвета">белый</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+                                            <tr id="info-1" data-id="2">
+                                                <td data-label="№" scope="row">2</td>
+                                                <td data-label="Цвета">зеленый</td>
+                                                <td data-label="Код цвета">#142</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+    
+    
+                                            </tr>
+                                            <tr  id="his">
+                                                <td data-label="№" scope="row">3</td>
+                                                <td data-label="Цвета">черный</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">40000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+    
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary purchase-btn" id="openModaldetails">Закупить
+                                        ткань</button>
+
+                                    <!-- Модальное окно -->
+                                    <div class="modalInvenTory" id="opencloseModaldetails" style="display: none;">
+                                        <div class="modal-Inven stock-status ">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title tab-pane-text">Покупка ткани для Заказа #8
+                                                    <span>закупка
+                                                        сырья</span></h4>
+                                                <button type="button" class="btn-close arrow-next"
+                                                    id="closeModaldetails"></button>
+                                            </div>
+                                            <div class="inven-content">
+                                                <table class="table table-bordered table-hover">
+                                                    <div class="inven-list">
+                                                        <h6>Ткань «Хлопок»</h6>
+                                                    </div>
+                                                    <thead class="table-status-header table-light">
+                                                        <tr>
+                                                            <th scope="col">№</th>
+                                                            <th scope="col">ЦВЕТА</th>
+                                                            <th scope="col">КОД ЦВЕТА</th>
+                                                            <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                            <th scope="col">КОЛИЧЕСТВО</th>
+                                                            <th scope="col">ВЫДАННОЕ <br> КОЛИЧЕСТВО</th>
+                                                            <th scope="col">КОММЕНТАРИЙ</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="employeeTable"  class="table-status-tbodys">
+                                                        <tr id="info-1" data-id="1">
+                                                            <td data-label="ID" scope="row">1</td>
+                                                            <td data-label="Цвета"class="inven-input">белый</td>
+                                                            <td   data-label="Код цвета"  class="inven-input">#152</td>
+                                                            <td data-label="Езменение" class="inven-input">метр</td>
+                                                            <td  data-label="Количество" class="inven-input">200</td>
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+
+                                                            <td data-label="Комментарий"  class="inven-input">4 рулона</td>
+                                                        </tr>
+                                                        <tr id="info-1"  data-id="2">
+                                                            <td data-label="ID" scope="row">2</td>
+                                                            <td data-label="Цвета" class="inven-input">черный</td>
+                                                            <td data-label="Код цвета" class="inven-input">#152</td>
+                                                            <td data-label="Езменение" class="inven-input">метр</td>
+                                                            <td data-label="Количество" class="inven-input">200</td>
+
+                                                            <td data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+
+                                                            </td>
+                                                            <td data-label="Комментарий"  class="inven-input">4 рулона</td>
+
+
+                                                        </tr>
+                                                        <tr id="info-1"  id="his">
+                                                            <td   data-label="ID" scope="row">3</td>
+                                                            <td   data-label="Цвета" class="inven-input">зеленый</td>
+                                                            <td data-label="Код цвета"  class="inven-input">#152</td>
+                                                            <td data-label="Езменение"  class="inven-input">метр</td>
+                                                            <td data-label="Количество" class="inven-input">200</td>
+                                                            <td  data-label="Цена" class="inven-input"><span><input type="text"></span></td>
+
+                                                            </td>
+                                                            <td data-label="Комментарий" class="inven-input">4 рулона</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <button class="btn btn-primary purchase-btn"
+                                                id="openModalInven">Выдать ткань</button>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-list">
+                                <div class="main-block mt-4">
+                                    <h4 class="block-title">Фурнитура</h4>
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="table-status-header table-light">
+                                            <tr>
+                                                <th scope="col">№</th>
+                                                <th scope="col">ЦВЕТА</th>
+                                                <th scope="col">КОД ЦВЕТА</th>
+                                                <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                <th scope="col">КОЛИЧЕСТВО</th>
+                                                <th scope="col">ЦЕНА</th>
+                                                <th scope="col">КОММЕНТАРИЙ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTable"  class="table-status-tbodys">
+                                            <tr id="info-1" data-id="1">
+                                                <td data-label="№" scope="row">1</td>
+                                                <td data-label="Цвета">белый</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+                                            <tr id="info-1" data-id="2">
+                                                <td data-label="№" scope="row">2</td>
+                                                <td data-label="Цвета">зеленый</td>
+                                                <td data-label="Код цвета">#142</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+    
+    
+                                            </tr>
+                                            <tr  id="his">
+                                                <td data-label="№" scope="row">3</td>
+                                                <td data-label="Цвета">черный</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">40000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+    
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary purchase-btn" id="openModalFrame">Закупить ткань</button>
+                                       <!-- Модальное окно -->
+                                       <div class="modalInvenTory" id="closeModalFramesq" style="display: none;">
+                                        <div class="modal-Inven stock-status">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title tab-pane-text">Покупка ткани для Заказа #8
+                                                    <span>закупка
+                                                        сырья</span></h4>
+                                                <button type="button" class="btn-close arrow-next"
+                                                    id="closeModalFrame"></button>
+                                            </div>
+                                            <div class="inven-content">
+                                                <table class="table table-bordered table-hover">
+                                                    <div class="inven-list">
+                                                        <h6>Ткань «Хлопок»</h6>
+                                                    </div>
+                                                    <thead  class="table-status-header table-light">
+                                                        <tr>
+                                                            <th scope="col">№</th>
+                                                            <th scope="col">ЦВЕТА</th>
+                                                            <th scope="col">КОД ЦВЕТА</th>
+                                                            <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                            <th scope="col">КОЛИЧЕСТВО</th>
+                                                            <th scope="col">ВЫДАННОЕ <br> КОЛИЧЕСТВО</th>
+                                                            <th scope="col">КОММЕНТАРИЙ</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="employeeTable" class="table-status-tbodys">
+                                                        <tr id="info-1"  data-id="1">
+                                                            <td  data-label="ID"  scope="row">1</td>
+                                                            <td  data-label="Цвета"  class="inven-input">белый</td>
+                                                            <td  data-label="Код цвета"  class="inven-input">#152</td>
+                                                            <td   data-label="Ед.изменение" class="inven-input">метр</td>
+                                                            <td  data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td  data-label="КОММЕНТАРИЙ"  class="inven-input">200</td>
+                                                            <td class="inven-input"></td>
+                                                        </tr>
+                                                        <tr id="info-1"  data-id="2">
+                                                            <td  data-label="ID"  scope="row">2</td>
+                                                            <td  data-label="Цвета"  class="inven-input">белый</td>
+                                                            <td  data-label="Код цвета"  class="inven-input">#152</td>
+                                                            <td   data-label="Ед.изменение" class="inven-input">метр</td>
+                                                            <td  data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td  data-label="КОММЕНТАРИЙ"  class="inven-input">200</td>
+                                                            <td class="inven-input"></td>
+                                                        </tr>
+                                                        <tr id="info-1" data-id="3">
+                                                            <td  data-label="ID"  scope="row">3</td>
+                                                            <td  data-label="Цвета"  class="inven-input">белый</td>
+                                                            <td  data-label="Код цвета"  class="inven-input">#152</td>
+                                                            <td   data-label="Ед.изменение" class="inven-input">метр</td>
+                                                            <td  data-label="Количество" class="inven-input"><span><input type="text"></span></td>
+                                                            <td  data-label="КОММЕНТАРИЙ"  class="inven-input">200</td>
+                                                            <td class="inven-input"></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                <button class="btn btn-primary purchase-btn"
+                                                id="openModalInven">Выдать ткань</button>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="completedOrders" role="tabpanel" aria-labelledby="completed-tab">
+                        <div class="inventory-portal">
+                            <h4 class="tab-pane-text">Заказ #8 <span>закупка сырья</span></h4>
+                            <div class="col-list">
+                                <div class="main-block mt-4">
+                                    <h4 class="block-title">Фурнитура</h4>
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="table-status-header table-light">
+                                            <tr>
+                                                <th scope="col">№</th>
+                                                <th scope="col">ЦВЕТА</th>
+                                                <th scope="col">КОД ЦВЕТА</th>
+                                                <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                <th scope="col">КОЛИЧЕСТВО</th>
+                                                <th scope="col">ЦЕНА</th>
+                                                <th scope="col">КОММЕНТАРИЙ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTable"  class="table-status-tbodys">
+                                            <tr id="info-1" data-id="1">
+                                                <td data-label="№" scope="row">1</td>
+                                                <td data-label="Цвета">белый</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+                                            <tr id="info-1" data-id="2">
+                                                <td data-label="№" scope="row">2</td>
+                                                <td data-label="Цвета">зеленый</td>
+                                                <td data-label="Код цвета">#142</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+    
+    
+                                            </tr>
+                                            <tr  id="his">
+                                                <td data-label="№" scope="row">3</td>
+                                                <td data-label="Цвета">черный</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">40000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-list">
+                                <div class="main-block mt-4">
+                                    <h4 class="block-title">Ткань «Хлопок»</h4>
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="table-status-header table-light">
+                                            <tr>
+                                                <th scope="col">№</th>
+                                                <th scope="col">ЦВЕТА</th>
+                                                <th scope="col">КОД ЦВЕТА</th>
+                                                <th scope="col">EД.ИЗМЕНЕНИЕ</th>
+                                                <th scope="col">КОЛИЧЕСТВО</th>
+                                                <th scope="col">ЦЕНА</th>
+                                                <th scope="col">КОММЕНТАРИЙ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="employeeTable"  class="table-status-tbodys">
+                                            <tr id="info-1" data-id="1">
+                                                <td data-label="№" scope="row">1</td>
+                                                <td data-label="Цвета">белый</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+                                            <tr id="info-1" data-id="2">
+                                                <td data-label="№" scope="row">2</td>
+                                                <td data-label="Цвета">зеленый</td>
+                                                <td data-label="Код цвета">#142</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">20000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+    
+    
+                                            </tr>
+                                            <tr  id="his">
+                                                <td data-label="№" scope="row">3</td>
+                                                <td data-label="Цвета">черный</td>
+                                                <td data-label="Код цвета">#152</td>
+                                                <td data-label="Ед. изменение">метр</td>
+                                                <td data-label="Количество">200</td>
+                                                <td data-label="Цена">40000 сом</td>
+                                                <td data-label="Комментарий">4 рулона</td>
+                                            </tr>
+    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+
+        <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/inventory.js"></script>
+
+</body>
+
+</html>

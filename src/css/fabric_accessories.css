@@ -1,0 +1,141 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+
+table thead tr th {
+  border: none !important;
+}
+table tbody tr th {
+  border: none !important;
+}
+table.table-bordered,
+table.table-hover,
+table.table-bordered th,
+table.table-bordered td,
+table.table-hover th,
+table.table-hover td {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.pagination {
+  display: flex;
+  column-gap: 10px;
+  margin-left: 290px;
+}
+.page-link {
+  border: none !important;
+  color: var(--seryy4) !important;
+}
+.page-link.active {
+  display: flex !important;
+  align-self: center !important;
+  justify-content: center !important;
+  width: 35px;
+  height: 35px;
+  background: var(--osnovnoy-siniy) !important;
+  border-radius: 50px !important;
+  color: var(--belyy) !important;
+}
+
+.save-btn{
+  background-color: var(--osnovnoy-siniy) !important;
+  color: var(--belyy) !important;
+}
+.save,
+.save:active,
+.save:focus {
+  background-color: #F5F7FA !important;
+}
+
+.save td,
+.save th {
+  background-color: #F5F7FA !important;
+}
+
+
+@media (max-width: 1400px) {
+    .page-section{
+      width: 100% !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+}
+
+@media (max-width: 480px) {
+.group-btn{
+  width: 100% !important;
+}
+#pop{
+  border: none;
+}
+#pop:hover{
+  background: var(--belyy) !important;
+}
+.page-section{
+  padding:  0 !important;
+  border-radius: 0 !important;
+}
+.element-link{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.link-search,
+.element-btn{
+  width: 100% !important;
+}
+.pagination{
+  margin-left: 60px;
+}
+.page-link{
+  background: none !important;
+}
+}
+
+@media (max-width: 425px) {
+  .pagination{
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .pagination{
+    margin-left: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .pagination{
+    margin-left: 0px;
+  }
+}
+

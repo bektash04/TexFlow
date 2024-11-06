@@ -1,0 +1,517 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+
+.nav-link.as-active {
+  border-radius: 10px;
+  padding: 0px 16px;
+  width: 228px;
+  height: 50px;
+  background: var(--prozrachnyy-siniy);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--osnovnoy-siniy) !important;
+}
+
+.story-manager {
+  border-radius: 20px;
+  padding: 20px;
+  width: 1060px;
+  background: var(--belyy);
+}
+.order-text {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.inventory-portal {
+  border: 1px solid var(--osnovnoy-siniy);
+  border-radius: 20px;
+  padding: 16px;
+  width: 1020px;
+
+  background: var(--seryy1);
+  margin-bottom: 36px;
+}
+.tab-pane-text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  text-align: start;
+  color: var(--black);
+}
+.tab-pane-text span {
+  border-radius: 50px;
+  padding: 10px 12px;
+  width: 109px;
+  height: 26px;
+  background: #ff00bb2e;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  color: var(--prozrachnyy-rozovyy);
+}
+.content-back {
+  margin-top: 75px;
+}
+.content-list {
+  width: 1060px;
+}
+.main-manager {
+  display: flex;
+  column-gap: 20px;
+}
+.manager-list {
+  border-radius: 14px;
+  padding: 16px;
+  width: 520px;
+  height: 147px;
+  background: var(--belyy);
+}
+.manager-list h4 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 26px;
+  text-align: start;
+  color: var(--black);
+  margin-top: 8px;
+}
+.manager-link p {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  color: var(--seryy5);
+}
+
+.manager-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.manager-link a {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: var(--osnovnoy-siniy);
+}
+
+.main-block {
+  width: 988px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--belyy);
+}
+
+.block-title {
+  margin-bottom: 12px;
+}
+
+.purchase-btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  height: 50px;
+  background: var(--osnovnoy-siniy);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--belyy);
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important;
+  margin-top: 30px !important;
+}
+.purchase-btnModal{
+  border-radius: 10px;
+  padding: 10px 20px;
+  height: 50px;
+  background: var(--osnovnoy-siniy);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--belyy);
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important;
+  margin-top: 30px !important;
+}
+#his {
+  border: none !important;
+  margin-bottom: 10px !important;
+}
+.nav-tabs li {
+  list-style: none;
+}
+
+/* <!-- CSS для модального окна --> */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalInvenTory {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#newsletterModalInven,
+#opencloseModaldetails,
+#newsletterModalInvenSubTitile,
+#closeModalFrame .modal-header {
+  border: none;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-Inven {
+  border-radius: 20px;
+  padding: 30px;
+  width: 1020px;
+  background: var(--seryy1);
+}
+.inven-input input {
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  background: var(--seryy1);
+}
+.full-input {
+  width: 123px;
+}
+
+.inven-content {
+  border-radius: 20px;
+  padding: 20px;
+  width: 960px;
+  background: var(--belyy);
+}
+.inven-list {
+  display: flex;
+  align-content: center;
+  column-gap: 20px;
+  margin-bottom: 12px;
+}
+.inven-list h6 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+  margin-top: 5px;
+}
+.inven-list input {
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 240px;
+  height: 42px;
+  background: var(--seryy1);
+  border: none;
+}
+.inven-list input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--seryy4);
+}
+.inven-list input:focus {
+  outline: none;
+}
+
+.inven-text {
+  margin-bottom: 12px;
+}
+.tab-pane-br {
+  display: none;
+}
+@media (max-width: 1400px) {
+  .story-manager,
+  .inventory-portal,
+  .main-block {
+    width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .table-status table,
+  .table-status thead,
+  .table-status tbody,
+  .table-status th,
+  .table-status td,
+  .table-status tr {
+    display: block;
+    height: auto !important;
+  }
+  .table-status table thead tr {
+    border: none;
+  }
+  .daterangepicker .calendar-table {
+    margin-left: -80px !important;
+  }
+  .stock-status {
+    margin-bottom: 50px;
+  }
+
+  .table-status table tbody tr {
+    text-align: end;
+    padding: 16px;
+    border-radius: 16px;
+    width: 100% !important;
+    background: var(--belyy) !important;
+  }
+  .table-status table tbody tr:hover {
+    background: none !important;
+    cursor: default !important;
+  }
+  .table-status th {
+    display: none;
+  }
+  .table-status td {
+    position: relative;
+    padding-left: 50%;
+    text-align: end;
+    border: none;
+    margin-top: -15px;
+  }
+  .table-status td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--seryy4);
+  }
+  .table-status-tbodys {
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: 12px !important;
+  }
+  #info-1,
+  #info-2,
+  #info-3,
+  #his,
+  #info-4:hover {
+    background: var(--belyy) !important;
+    cursor: default !important;
+    border: none;
+  }
+
+  .main-block {
+    background: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .natification {
+    display: none;
+  }
+
+  .inven-input {
+    display: flex !important;
+    justify-content: end !important;
+    text-align: end;
+  }
+  .inven-input span input {
+    padding: 10px;
+    width: 110px;
+    height: 35px;
+    margin-top: -10px;
+  }
+
+  .inven-input span input:focus {
+    outline: none;
+  }
+ 
+  .primy-w1 {
+    display: block !important;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .nav-tabs {
+    display: flex;
+    justify-content: space-around;
+  }
+  .manager-list h4 {
+    font-size: 18px;
+  }
+  .manager-link {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+  .manager-link a {
+    font-size: 12px;
+  }
+  .manager-link a svg {
+    width: 20px;
+    height: 20px;
+  }
+  .content-name {
+    font-size: 20px;
+  }
+  .nav-tabs li {
+    list-style: none;
+  }
+  .nav-tabs li button {
+    list-style: none;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: var(--black);
+  }
+  .table-status {
+    overflow: visible;
+    background: var(--belyy) !important;
+    margin-bottom: 30px;
+  }
+  .order-tex {
+    padding: 20px;
+  }
+
+  .inventory-portal {
+    border: none;
+    padding: 0;
+  }
+  .tab-pane-text {
+    font-size: 20px;
+    padding: 20px;
+  }
+  .block-title {
+    font-size: 20px;
+    margin-top: -150px;
+  }
+
+  .modal-Inven {
+    width: 328px;
+    height: 520px;
+    overflow-y: auto;
+  }
+  .stock-status {
+    padding: 20px 10px !important;
+}
+  .modal-Inven .modal-header {
+    padding: 10px;
+  }
+  #closeModalInven {
+    margin-top: -50px;
+  }
+  .tab-pane-text {
+    text-align: start !important;
+  }
+  .tab-pane-br {
+    display: block;
+  }
+
+  .inven-content {
+    width: 100%;
+    background: none;
+  }
+  .inven-list {
+    margin-top: -25px;
+  }
+  .inven-list h6 {
+    font-size: 18px;
+  }
+  .inven-list input {
+    width: 100%;
+    background: var(--belyy);
+  }
+  .purchase-btn{
+    width: 100% !important;
+    height: 45px !important;
+    margin-top: -10px !important;
+  }
+  .purchase-btnModal{
+    height: 40px !important;
+    margin-top: -10px !important;
+  }
+
+  .modal-Inven {
+
+    padding: 0px;
+  }
+  .plus-inven{
+    width: 100%;
+    height: 45px;
+    border: solid 1px var(--osnovnoy-siniy);
+  }
+
+  .full-innevtory{
+    display: flex !important;
+    justify-content: end !important;
+    margin-left: 120px !important;
+  }
+  .nav-link.as-active,
+  .bi-grid-ststic,
+  .bi.bi-chevron-down,
+  .nav-link.active-inven{
+ display: none !important;
+  }
+
+
+ 
+}
+
+@media (max-width: 425px) {
+}
+
+@media (max-width: 375px) {
+}

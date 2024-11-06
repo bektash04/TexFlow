@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/finance.css">
+    <link rel="stylesheet" href="../css/employees.css">
+    <link rel="stylesheet" href="../css/salary-disbursement.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+</head>
+
+<body>
+    <div class="header ">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item ">
+                    <a href="../pages/main-page.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item item" style="display: block;">
+                    <a href="#" class="item active d-flex align-items-center" id="toggleSubMenu">
+                        <i class="bi bi-grid-fill me-2"></i>
+                        <span class="nav-production">Управление цехом</span><span class="nav-shop weq">Цех</span>
+                        <i class="bi bi-chevron-down ms-auto" id="arrow"></i>
+                    </a>
+                </li>
+                <li class="nav-item sub-item" style="display: block;">
+                    <a href="#" class="nav-link active-inven d-flex align-items-center">
+                        Список персонала
+                    </a>
+                </li>
+                <li class="nav-item sub-item" style="display: block;">
+                    <a href="#" class="nav-link as-active d-flex align-items-center">
+                        • Зарплаты
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="#" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/orders.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span>  Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/ clients.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                      <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+     
+        <div class="main-container">
+            <div class="container">
+                <div class="content-list">
+                    <div class="content p-4">
+                        <h2 id="person-title" class="primy-w1 ">Список персонала</h2>
+                        <h2 class="primy-w1 primy-befor">Зарплаты</h2>
+                    </div>
+                    <div>
+                       <div class="salary-subtitle-wind">
+                        <div class="salary-subtitle">
+                           <div class="payroll-searchMobile">
+                            <div class="payroll-search" id="payrollSearch">
+                                <img src="../img/search.png" alt="" width="24px" height="24px">
+                                <input type="text" placeholder="Поиск">
+                            </div>
+                            <div class="menu-dots" id="menuDots">&#x22EE;</div>
+                           </div>
+                         <div class="salaryBtns-of">
+                            <button type="button" class="btn btn-primary salary-btn" id="openModal">
+                                Сделать рассылку
+                            </button>
+                            <button type="button" class="btn btn-primary salary-btnMob" id="openModal">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7111_68450)">
+                                        <path d="M12.0301 5L12.0117 19" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_7111_68450">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg> Добавить сотрудника
+                            </button>
+                         </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="payment__statistic">
+                    <div class="statistic__block">
+                        <img src="../img/statistic/circle_icons_wallet.png" alt="" width="44px" height="44px">
+                        <p>Всего к оплате</p>
+                        <h4>50 214c</h4>
+    
+                    </div>
+                    <div class="statistic__block">
+                        <img src="../img/statistic/circle_icons_accept.png" alt="" width="44px" height="44px">
+                        <p>Запросы на авансе</p>
+                        <h4>145 840c</h4>
+                    </div>
+                </div>
+                <div class="payment">
+                    <div class="col-list">
+                        <div class="table-group table-status stock-status  table-group-salary mt-3">
+                            <div class="salary-input">
+                                <input type="text" value="Швеи, упаковщики">
+                            </div>
+    
+                            <table class="table table-bordered table-hover">
+                                <thead class="table-status-header table-ligh">
+                                    <tr>
+                                        <th scope="col">№</th>
+                                        <th scope="col">ФИО</th>
+                                        <th scope="col">Должность</th>
+                                        <th scope="col">К оплате</th>
+                                        <th scope="col">Выдать</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="employeeTable" class="table-status-tbodys">
+                                    <tr id="info-1" data-id="1">
+                                        <td  data-label="№" scope="row" class="numbering">1</td>
+                                        <td data-label="Фио" >Никита Александрович</td>
+                                        <td data-label="Должность"  class="job-absent">Технолог</td>
+                                        <td data-label="К оплате" ><span class="badge badge-green">1500c</span></td>
+                                        <td class="issue"  data-label="Выдать" ><button class="away-btn" id="openModalSalary">Выдать</button></td>
+                                        <!-- Модальное окно -->
+                                        <div class="modal" id="newsletterModalSalary" style="display: none;">
+                                            <div class="modal-salary">
+                                                <div class="modal-header">
+                                                    <img src="../img/arrow-left.png" alt="">
+                                                    <h5 class="modal-title title-col">Выдача зарплаты</h5>
+                                                    <button type="button" class="btn-close arrow-next"
+                                                        id="closeModalSalary"></button>
+                                                </div>
+                                                <div class="deductions-list">
+                                                    <img src="../img/circle_ava.png" alt="" width="32px" height="32px">
+                                                    <div class="deductions-item">
+                                                        <h6>Оля Морозова</h6>
+                                                        <p>Швея / Технолог</p>
+                                                    </div>
+                                                </div>
+                                                <div class="deductions-wallet">
+                                                    <img src="../img/statistic/green_wallet.png" alt="" width="44px"
+                                                        height="44px">
+                                                    <p>Текущий баланс сотрудника</p>
+                                                    <h4>50 214</h4>
+                                                </div>
+                                                <ul class="deductions-amounts">
+                                                    <li>Сумма выплаты
+                                                        <input type="text" placeholder="Введите сумму выплаты">
+                                                    </li>
+    
+    
+                                                </ul>
+                                                <div class="deductions-btns">
+                                                    <button type="button" class="btn cancellation-btn">Отмена</button>
+                                                    <button type="button" class="btn btn-primary 
+                                                confirm-btn" id="openModalSuc">Потвердить</button>
+                                                   <!-- Модальное окно -->
+                                                   <div class="modal" id="newsletterModalSuccessful" style="display: none;">
+                                                    <div class="modal-successful">
+                                                        <div class="modal-header deductions-header">
+                                                            <img class="successful-img" src="../img/checkbox_green.png" alt="" width="40px" height="41px">
+                                                            <button type="button" class="btn-close arrow-next"
+                                                                id="closeModalSuccessful"></button>
+                                                        </div>
+                                                        <div class="successful-list"> 
+                                                            <h4>Успешная выплата зарплаты 1000</h4>
+                                                            <p>Вы подтвердили оплату сотруднику <span>Оля Андреева,</span> сумма оплаты будет добавлена в историю выплат</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+    
+                                                </div>
+    
+    
+                                            </div>
+                                        </div>
+                                    </tr>
+                                    <tr id="info-1" data-id="2">
+                                        <td  data-label="№" scope="row" class="numbering">2</td>
+                                        <td data-label="Фио">Эшмат Ташматов</td>
+                                        <td data-label="Должность" class="job-absent">Технолог</td>
+                                        <td data-label="К оплате"><span class="badge badge-green">684c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn" id="openModalAdvance">Аванс</button></td>
+                                        <!-- Модальное окно -->
+                                        <div class="modal" id="newsletterModalAdvance" style="display: none;">
+                                            <div class="modal-salary">
+                                                <div class="modal-header deductions-header">
+                                                    <img src="../img/arrow-left.png" alt="">
+                                                    <h5 class="modal-title">Выдача аванса: <br> <span>1000c</span></h5>
+                                                    <button type="button" class="btn-close arrow-next"
+                                                        id="closeModalAdvance"></button>
+                                                </div>
+                                                <div class="deductions-list">
+                                                    <img src="../img/circle_ava.png" alt="" width="32px" height="32px">
+                                                    <div class="deductions-item">
+                                                        <h6>Оля Морозова</h6>
+                                                        <p>Швея / Технолог</p>
+                                                    </div>
+                                                </div>
+                                                <div class="deductions-wallet">
+                                                    <img src="../img/statistic/green_wallet.png" alt="" width="44px"
+                                                        height="44px">
+                                                    <p>Текущий баланс сотрудника</p>
+                                                    <h4>50 214</h4>
+                                                </div>
+                                                <ul class="deductions-amounts">
+                                                    <li>Сумма выплаты
+                                                        <input type="text" placeholder="Введите сумму выплаты">
+                                                    </li>
+    
+    
+                                                </ul>
+                                                <div class="deductions-btns">
+                                                    <button type="button" class="btn cancellation-btn">Отмена</button>
+                                                    <button type="button" class="btn btn-primary 
+                                                confirm-btn" id="openModalSuccessful">Потвердить</button>
+                                                    <!-- Модальное окно -->
+                                                    <div class="modal" id="newsletterModalSuccessful" style="display: none;">
+                                                        <div class="modal-successful">
+                                                            <div class="modal-header deductions-header">
+                                                                <img class="successful-img" src="../img/checkbox_green.png" alt="" width="40px" height="41px">
+                                                                <button type="button" class="btn-close arrow-next"
+                                                                    id="closeModalSuccessful"></button>
+                                                            </div>
+                                                            <div class="successful-list"> 
+                                                                <h4>Успешная выплата зарплаты 1000</h4>
+                                                                <p>Вы подтвердили оплату сотруднику <span>Оля Андреева,</span> сумма оплаты будет добавлена в историю выплат</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    
+    
+                                            </div>
+                                        </div>
+                                    </tr>
+                                    <tr id="info-1" data-id="3">
+                                        <td data-label="№"  scope="row" class="numbering">3</td>
+                                        <td  data-label="Фио">Никита Александрович</td>
+                                        <td  data-label="Должность" class="job-absent">Технолог</td>
+                                        <td  data-label="К оплате"><span class="badge badge-green">2300c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="4">
+                                        <td data-label="№"  scope="row" class="numbering">4</td>
+                                        <td data-label="Фио">Эшмат Ташматов</td>
+                                        <td data-label="Должность" class="job-workin">Швея</td>
+                                        <td   data-label="К оплате"><span class="badge badge-red">-550c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="5">
+                                        <td data-label="№"  scope="row" class="numbering">5</td>
+                                        <td data-label="Фио">Никита Александрович</td>
+                                        <td data-label="Должность" class="job-workin">Швея</td>
+                                        <td data-label="К оплате"><span class="badge badge-whire">0c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="6">
+                                        <td  data-label="№"  scope="row" class="numbering">6</td>
+                                        <td data-label="Фио">Эшмат Ташматов</td>
+                                        <td data-label="Должность" class="job-workin">Швея</td>
+                                        <td  data-label="К оплате"><span class="badge badge-red">-50c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="7">
+                                        <td data-label="№"  scope="row" class="numbering">7</td>
+                                        <td  data-label="Фио">Никита Александрович</td>
+                                        <td  data-label="Должность" class="job-absent">Технолог</td>
+                                        <td  data-label="К оплате"><span class="badge badge-green">2300c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="8">
+                                        <td data-label="№" scope="row" class="numbering">8</td>
+                                        <td data-label="Фио">Эшмат Ташматов</td>
+                                        <td  data-label="Должность"class="job-workin">Швея</td>
+                                        <td data-label="К оплате"><span class="badge badge-whire">0c</span></td>
+                                        <td  class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="9">
+                                        <td data-label="№"  scope="row" class="numbering">9</td>
+                                        <td  data-label="Фио">Никита Александрович</td>
+                                        <td  data-label="Должность" class="job-absent">Технолог</td>
+                                        <td  data-label="К оплате"><span class="badge badge-green">2300c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+                                    <tr id="info-1" data-id="10">
+                                        <td data-label="№" scope="row" class="numbering">10</td>
+                                        <td data-label="Фио">Эшмат Ташматов</td>
+                                        <td data-label="Должность" class="job-workin">Швея</td>
+                                        <td   data-label="К оплате"><span class="badge badge-red">-550c</span></td>
+                                        <td class="issue"  data-label="Выдать"><button class="away-btn">Выдать</button></td>
+                                    </tr>
+    
+                                </tbody>
+                            </table>
+                            <nav class="nav_pagination">
+                                <ul class="pagination" id="pagination">
+                                    <li class="page-item disabled" id="prev-page">
+                                        <a class="page-link" href="#" tabindex="-1"><img src="../img/arrow-left.png"
+                                                alt=""></a>
+                                    </li>
+                                    <li class="page-item" id="next-page">
+                                        <a class="page-link active" href="#">1</a>
+                                    </li>
+                                    <li class="page-item" id="next-page">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item" id="next-page">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item" id="next-page">
+                                        <a class="page-link" href="#">...</a>
+                                    </li>
+                                    <li class="page-item" id="next-page">
+                                        <a class="page-link" href="#">10</a>
+                                    </li>
+                                    <li class="page-item" id="next-page">
+                                        <a class="page-link" href="#"><img src="../img/arrow-right.png" alt=""></a>
+                                    </li>
+    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="order order__statistic ">
+                        <div class="order-list d-flex gap-5 mb-3">
+                            <h4 class="primy-w5">Запросы на авансовый платеж</h4>
+                            <img src="../img/arrow_blue.png" alt="" width="20px" height="20px">
+                        </div>
+                        <p class="desc-w6">31 дек, 2023</p>
+                        <div class="client__statistic">
+                            <div class="order-avater">
+                                <img src="../img/circle_ava_big.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                            <div class="time__statistic">
+                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="4" cy="4" r="4" fill="#DD0639" />
+                                </svg>
+                                <p>15:47</p>
+                            </div>
+                        </div>
+                        <form class="time__btns">
+                            <button type="submit" class="custom-disabled">Отключить</button>
+                            <button type="submit"  class="custom-blue">Принять</button>
+                        </form>
+                        <hr>
+                        <div class="client__statistic">
+                            <div class="order-avater">
+                                <img src="../img/circle_ava_big.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                            <div class="time__statistic">
+                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="4" cy="4" r="4" fill="#DD0639" />
+                                </svg>
+                                <p>15:47</p>
+                            </div>
+                        </div>
+                        <form class="time__btns">
+                            <button type="submit" class="custom-disabled">Отключить</button>
+                            <button type="submit"  class="custom-blue">Принять</button>
+                        </form>
+                        <hr>
+                        <div class="client__statistic">
+                            <div class="order-avater">
+                                <img src="../img/circle_ava_big.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                            <div class="time__statistic">
+                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="4" cy="4" r="4" fill="#DD0639" />
+                                </svg>
+                                <p>15:47</p>
+                            </div>
+                        </div>
+                        <form class="btn__statistic">
+                            <button type="submit" class="custom-disabled" disabled>Отключить</button>
+                            <span><img src="../img/Component 1.png" alt="" width="25px" height="24px">На потверждении</span>
+                        </form>
+                        <hr>
+                        <div class="client__statistic">
+                            <div class="order-avater">
+                                <img src="../img/circle_ava_big.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                            <div class="time__statistic">
+                                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="4" cy="4" r="4" fill="#DD0639" />
+                                </svg>
+                                <p>15:47</p>
+                            </div>
+                        </div>
+                        <form class="time__btns">
+                            <button type="submit" class="custom-disabled">Отключить</button>
+                            <button type="submit"  class="custom-blue">Принять</button>
+                        </form>
+                        <hr>
+                        <div>
+                            <div class="client__statistic">
+                                <div class="order-avater">
+                                    <img src="../img/circle_ava_big.png" alt="" width="32px" height="32px">
+                                    <div>
+                                        <h5 class="primy-w6">Оля Морозова</h5>
+                                        <p class="desc-w7">Технолог</p>
+                                    </div>
+                                </div>
+                                <div class="time__statistic">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="4" cy="4" r="4" fill="#DD0639" />
+                                    </svg>
+                                    <p>15:47</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="time__btns">
+                            <button type="submit" class="custom-disabled">Отключить</button>
+                            <button type="submit"  class="custom-blue">Принять</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+    <script src="../js/salary-disbursement.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

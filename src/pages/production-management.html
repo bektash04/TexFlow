@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/production-management.css">
+    <link rel="stylesheet" href="../css/employees.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header ">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+          <a href="#">
+            <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+        </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link d-flex align-items-center">
+                      <i class="bi bi-house-door me-2"></i>
+                      <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item item">
+                    <a href="#" class="item active d-flex align-items-center">
+                      <i class="bi bi-grid-fill me-2"></i>
+                        <span class="nav-production">Производство</span><span class="nav-shop weq">Цех</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6954_86745)">
+                                <path d="M5.5 15L11.5 9L17.5 15" stroke="#F5F7FA" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_6954_86745">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/employees.html" class="nav-link d-flex align-items-center">
+                      <i class="bi bi-people me-2"></i>
+                        <span class="nav-production">Сотрудники</span><span class="nav-shop">Персонал</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/finance.html" class="nav-link d-flex align-items-center">
+                      <i class="bi bi-wallet2 me-2"></i>
+                      <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="..pages/orders.html" class="nav-link d-flex align-items-center">
+                      <i class="bi bi-card-list me-2"></i>
+                      <span>  Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/clients.html" class="nav-link d-flex align-items-center">
+                      <i class="bi bi-person me-2"></i>
+                      <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/setting.html" class="nav-link d-flex align-items-center">
+                      <i class="bi bi-gear me-2"></i>
+                      <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Контент -->
+       <div class="main-container">
+        <div class="container">
+          <div>
+              <div class="nav-brand">
+                  <img src="../img/back.png" alt="" width="40px" height="40px">
+                  <p>Двойка Дубай > Технический процесс > <span>Управление операциями </span></p>
+              </div>
+              <div class="nav-title p-2">
+                  <h2>Управление операциями и учет производительности</h2>
+              </div>
+          </div>
+
+          <div class="element-group table-status stock-status  mt-3">
+              <div class="element-title">
+                  <h4>1.Крой</h4>
+                  <img src="../img/arrow_up.png" alt="" width="24px" height="24px">
+              </div>
+              <div class="element-link">
+                  <div class="link-search">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск сотрудника">
+                  </div>
+                  
+                  <button class="element-btn" id="openModalEdit">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21.5 6.30639L17.8475 2.65234L14.3741 6.30639L18.1786 9.80639L21.5 6.30639Z"
+                              fill="white" />
+                          <path d="M4 16.8596V20.4996H7.6586L18.1786 9.80639L14.3741 6.30639L4 16.8596Z"
+                              fill="#0062F5" fill-opacity="0.12" />
+                          <path
+                              d="M14.3741 6.30639L17.8475 2.65234L21.5 6.30639L18.1786 9.80639M14.3741 6.30639L4 16.8596V20.4996H7.6586L18.1786 9.80639M14.3741 6.30639L18.1786 9.80639"
+                              stroke="white" stroke-width="2" stroke-linejoin="round" />
+                      </svg>
+                      Редактировать список сотрудников</button>
+                        <!-- Модальное окно -->
+      <div class="modal" id="newsletterModal" style="display: none;">
+          <div class="modal-edit">
+              <div class="modal-header">
+                  <h5 class="">Выберите сотрудников из списка
+                    на операцию - Крой</h5>
+                  <button type="button" class="btn-close arrow-next" id="closeModalEdit"></button>
+                </div>
+                <div class="table-edit table-status table__status">
+                  <div class="table-serach">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск">
+                  </div>
+                  <table class="table table-bordered table-hover modal-table">
+                      <thead class="table-status-header table-light">
+                        <tr >
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Должность</th>
+                        </tr>
+                      </thead>
+                      <tbody id="employeeTableModel" class="table-status-tbodys">
+                        <tr id="info-1" data-id="1">
+                          <td data-label="№"  data-label="№" scope="row" class="numbering">1</td>
+                          <td data-label="Фио">Эшмат Ташматов</td>
+                          <td data-label="Статус"><span class="badge badge-working">на работе</span></td>
+                          <td data-label="Должность" class="job-absent">Технолог</td>
+                         <td ><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr id="info-1" data-id="2">
+                          <td  data-label="№" scope="row" class="numbering">2</td>
+                          <td  data-label="Фио">Эшмат Ташматов</td>
+                          <td  data-label="Статус"><span class="badge badge-absent">отсутствует</span></td>
+                          <td  data-label="Должность" class="job-absent">Технолог</td>
+                      
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr id="info-1" data-id="3">
+                          <td  data-label="№" scope="row" class="numbering">3</td>
+                          <td data-label="Фио">Эшмат Ташматов</td>
+                          <td  data-label="Статус"><span class="badge badge-working">на работе</span></td>
+                          <td  data-label="Должность" class="job-absent">Технолог</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr id="info-1" data-id="4">
+                          <td  data-label="№" scope="row" class="numbering">4</td>
+                          <td  data-label="Фио">Эшмат Ташматов</td>
+                          <td data-label="Статус"><span class="badge badge-absent">отсутствует</span></td>
+                          <td data-label="Должность" class="job-workin">Швея</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr id="info-1" data-id="5">
+                          <td  data-label="№" scope="row" class="numbering">5</td>
+                          <td  data-label="Фио">Эшмат Ташматов</td>
+                          <td  data-label="Статус"><span class="badge badge-working">на работе</span></td>
+                          <td data-label="Должность"  class="job-workin">Швея</td>
+                          
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr  id="info-1" data-id="6">
+                          <td data-label="№" scope="row" class="numbering">6</td>
+                          <td data-label="Фио">Эшмат Ташматов</td>
+                          <td data-label="Статус"><span class="badge badge-absent">отсутствует</span></td>
+                          <td data-label="Должность" class="job-workin">Швея</td>
+                        
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr id="info-1" data-id="7"  class="bagbe-checkbox">
+                          <td data-label="№" scope="row" class="numbering">7</td>
+                          <td data-label="Фио">Эшмат Ташматов</td>
+                          <td data-label="Статус"><span class="badge badge-working">на работе</span></td>
+                          
+                        <td data-label="Должность" class="job-workin">Швея</td>
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary bagbe-btn">Отправить сообщение</button>
+                </div>
+          </div>
+        </div>
+              </div>
+              <table class="table table-bordered table-hover">
+                  <thead class="table-status-header table-light">
+                      <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">ВЫДАНО</th>
+                          <th scope="col">БРАКОВ</th>
+                          <th scope="col">ВЫПОЛНЕНО</th>
+                          <th scope="col">ОПЛАТА ЗА <br> 1 ЕДИНИЦУ</th>
+                          <th scope="col">НАКОПЛЕНО <br> ИТОГО</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="employeeTable" class="table-status-tbodys">
+                      <tr id="pop-1" class="pop-1">
+                          <td  data-label="№" scope="row" class="numbering">1</td>
+                          <td data-label="Фио">Никита Александрович</td>
+                          <td data-label="Выдано">500шт</td>
+                          <td data-label="Браков">5шт</td>
+                          <td data-label="Выполнено">400шт</td>
+                          <td data-label="Оплата за">10 c</td>
+                          <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                          <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="pop">
+                        <td  data-label="№" scope="row" class="numbering">2</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="page-section table-status table__status mt-3">
+              <div class="element-title">
+                  <h4>2.Пошив</h4>
+                  <img src="../img/arrow_up.png" alt="" width="24px" height="24px">
+              </div>
+              <div class="element-link">
+                  <div class="link-search">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск сотрудника">
+                  </div>
+                  <button class="element-btn" id="openModalAll">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21.5 6.30639L17.8475 2.65234L14.3741 6.30639L18.1786 9.80639L21.5 6.30639Z"
+                              fill="white" />
+                          <path d="M4 16.8596V20.4996H7.6586L18.1786 9.80639L14.3741 6.30639L4 16.8596Z"
+                              fill="#0062F5" fill-opacity="0.12" />
+                          <path
+                              d="M14.3741 6.30639L17.8475 2.65234L21.5 6.30639L18.1786 9.80639M14.3741 6.30639L4 16.8596V20.4996H7.6586L18.1786 9.80639M14.3741 6.30639L18.1786 9.80639"
+                              stroke="white" stroke-width="2" stroke-linejoin="round" />
+                      </svg>
+                      Редактировать список сотрудников</button>
+                                         <!-- Модальное окно -->
+      <div class="modal" id="newsletterModal" style="display: none;">
+          <div class="modal-edit">
+              <div class="modal-header">
+                  <h5 class="">Выберите сотрудников из списка
+                    на операцию - Крой</h5>
+                  <button type="button" class="btn-close arrow-next" id="closeModalAll"></button>
+                </div>
+
+                <div class="table-edit">
+                  <div class="table-serach">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск">
+                  </div>
+                  <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Должность</th>
+                        </tr>
+                      </thead>
+                      <tbody id="employeeTable">
+                        <tr data-id="1">
+                          <th scope="row" class="numbering">1</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="2">
+                          <th scope="row" class="numbering">2</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-absent">Технолог</td>
+                      
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="3">
+                          <th scope="row" class="numbering">3</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="4">
+                          <th scope="row" class="numbering">4</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="5">
+                          <th scope="row" class="numbering">5</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-workin">Швея</td>
+                          
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="6">
+                          <th scope="row" class="numbering">6</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                        
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="7"  class="bagbe-checkbox">
+                          <th scope="row" class="numbering">7</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          
+                          <td>0502800202</td>
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary bagbe-btn">Отправить сообщение</button>
+                </div>
+          </div>
+        </div>
+              </div>
+              <table class="table table-bordered table-hover">
+                  <thead class="table-status-header table-light">
+                      <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">ВЫДАНО</th>
+                          <th scope="col">БРАКОВ</th>
+                          <th scope="col">ВЫПОЛНЕНО</th>
+                          <th scope="col">ОПЛАТА ЗА <br> 1 ЕДИНИЦУ</th>
+                          <th scope="col">НАКОПЛЕНО <br> ИТОГО</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="employeeTable" class="table-status-tbodys">
+                      <tr id="info-1" data-id="1">
+                        <td  data-label="№" scope="row" class="numbering">1</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="2">
+                        <td  data-label="№" scope="row" class="numbering">2</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="3">
+                        <td  data-label="№" scope="row" class="numbering">3</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="4">
+                        <td  data-label="№" scope="row" class="numbering">4</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="5">
+                        <td  data-label="№" scope="row" class="numbering">5</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="6">
+                        <td  data-label="№" scope="row" class="numbering">6</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="7">
+                        <td  data-label="№" scope="row" class="numbering">7</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="info-1" data-id="8">
+                        <td  data-label="№" scope="row" class="numbering">8</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="pop">
+                        <td  data-label="№" scope="row" class="numbering">9</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+
+                      </tr>
+                  </tbody>
+              </table>
+              <nav class="nav_pagination">
+                  <ul class="pagination" id="pagination">
+                    <li class="page-item disabled" id="prev-page">
+                      <a class="page-link" href="#" tabindex="-1"><img src="../img/arrow-left.png" alt=""></a>
+                    </li>
+                    <li class="page-item active" id="next-page">
+                      <a class="page-link active" href="#">1</a>
+                    </li>
+                    <li class="page-item" id="next-page">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item" id="next-page">
+                      <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item" id="next-page">
+                      <a class="page-link" href="#">...</a>
+                    </li>
+                    <li class="page-item" id="next-page">
+                      <a class="page-link" href="#">10</a>
+                    </li>
+                    <li class="page-item" id="next-page">
+                      <a class="page-link" href="#"><img src="../img/arrow-right.png" alt=""></a>
+                    </li>
+    
+                  </ul>
+                </nav>
+          </div>
+          <div class="element-group table-status table__status mt-3">
+              <div class="element-title">
+                  <h4>3.ОТК</h4>
+                  <img src="../img/arrow_up.png" alt="" width="24px" height="24px">
+              </div>
+              <div class="element-link">
+                  <div class="link-search">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск сотрудника">
+                  </div>
+                  <button class="element-btn" id="openModalWont">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21.5 6.30639L17.8475 2.65234L14.3741 6.30639L18.1786 9.80639L21.5 6.30639Z"
+                              fill="white" />
+                          <path d="M4 16.8596V20.4996H7.6586L18.1786 9.80639L14.3741 6.30639L4 16.8596Z"
+                              fill="#0062F5" fill-opacity="0.12" />
+                          <path
+                              d="M14.3741 6.30639L17.8475 2.65234L21.5 6.30639L18.1786 9.80639M14.3741 6.30639L4 16.8596V20.4996H7.6586L18.1786 9.80639M14.3741 6.30639L18.1786 9.80639"
+                              stroke="white" stroke-width="2" stroke-linejoin="round" />
+                      </svg>
+                      Редактировать список сотрудников</button>
+                                         <!-- Модальное окно -->
+      <div class="modal" id="newsletterModal" style="display: none;">
+          <div class="modal-edit">
+              <div class="modal-header">
+                  <h5 class="">Выберите сотрудников из списка
+                    на операцию - Крой</h5>
+                  <button type="button" class="btn-close arrow-next" id="closeModalEditWont"></button>
+                </div>
+
+                <div class="table-edit">
+                  <div class="table-serach">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск">
+                  </div>
+                  <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Должность</th>
+                        </tr>
+                      </thead>
+                      <tbody id="employeeTable">
+                        <tr data-id="1">
+                          <th scope="row" class="numbering">1</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="2">
+                          <th scope="row" class="numbering">2</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-absent">Технолог</td>
+                      
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="3">
+                          <th scope="row" class="numbering">3</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="4">
+                          <th scope="row" class="numbering">4</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="5">
+                          <th scope="row" class="numbering">5</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-workin">Швея</td>
+                          
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="6">
+                          <th scope="row" class="numbering">6</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                        
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="7"  class="bagbe-checkbox">
+                          <th scope="row" class="numbering">7</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          
+                          <td>0502800202</td>
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary bagbe-btn">Отправить сообщение</button>
+                </div>
+          </div>
+        </div>
+              </div>
+              <table class="table table-bordered table-hover">
+                  <thead class="table-status-header table-light">
+                      <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">ВЫДАНО</th>
+                          <th scope="col">БРАКОВ</th>
+                          <th scope="col">ВЫПОЛНЕНО</th>
+                          <th scope="col">ОПЛАТА ЗА <br> 1 ЕДИНИЦУ</th>
+                          <th scope="col">НАКОПЛЕНО <br> ИТОГО</th>
+
+                      </tr>
+                  </thead  >
+                  <tbody id="employeeTable" class="table-status-tbodys">
+                      <tr id="pop-1" class="pop-1">
+                        <td  data-label="№" scope="row" class="numbering">1</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="pop">
+                        <td  data-label="№" scope="row" class="numbering">2</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="element-group table-status table__status mt-3">
+              <div class="element-title">
+                  <h4>4.Утюг</h4>
+                  <img src="../img/arrow_up.png" alt="" width="24px" height="24px">
+              </div>
+              <div class="element-link">
+                  <div class="link-search">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск сотрудника">
+                  </div>
+                  <button class="element-btn" id="openModalСhange">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21.5 6.30639L17.8475 2.65234L14.3741 6.30639L18.1786 9.80639L21.5 6.30639Z"
+                              fill="white" />
+                          <path d="M4 16.8596V20.4996H7.6586L18.1786 9.80639L14.3741 6.30639L4 16.8596Z"
+                              fill="#0062F5" fill-opacity="0.12" />
+                          <path
+                              d="M14.3741 6.30639L17.8475 2.65234L21.5 6.30639L18.1786 9.80639M14.3741 6.30639L4 16.8596V20.4996H7.6586L18.1786 9.80639M14.3741 6.30639L18.1786 9.80639"
+                              stroke="white" stroke-width="2" stroke-linejoin="round" />
+                      </svg>
+                      Редактировать список сотрудников</button>
+                                         <!-- Модальное окно -->
+      <div class="modal" id="newsletterModal" style="display: none;">
+          <div class="modal-edit">
+              <div class="modal-header">
+                  <h5 class="">Выберите сотрудников из списка
+                    на операцию - Крой</h5>
+                  <button type="button" class="btn-close arrow-next" id="closeModalСhange"></button>
+                </div>
+
+                <div class="table-edit">
+                  <div class="table-serach">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск">
+                  </div>
+                  <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Должность</th>
+                        </tr>
+                      </thead>
+                      <tbody id="employeeTable">
+                        <tr data-id="1">
+                          <th scope="row" class="numbering">1</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="2">
+                          <th scope="row" class="numbering">2</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-absent">Технолог</td>
+                      
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="3">
+                          <th scope="row" class="numbering">3</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="4">
+                          <th scope="row" class="numbering">4</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="5">
+                          <th scope="row" class="numbering">5</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-workin">Швея</td>
+                          
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="6">
+                          <th scope="row" class="numbering">6</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                        
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="7"  class="bagbe-checkbox">
+                          <th scope="row" class="numbering">7</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          
+                          <td>0502800202</td>
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary bagbe-btn">Отправить сообщение</button>
+                </div>
+          </div>
+        </div>
+              </div>
+              <table class="table table-bordered table-hover">
+                  <thead class="table-status-header table-light">
+                      <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">ВЫДАНО</th>
+                          <th scope="col">БРАКОВ</th>
+                          <th scope="col">ВЫПОЛНЕНО</th>
+                          <th scope="col">ОПЛАТА ЗА <br> 1 ЕДИНИЦУ</th>
+                          <th scope="col">НАКОПЛЕНО <br> ИТОГО</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="employeeTable" class="table-status-tbodys">
+                      <tr id="pop-1" class="pop-1">
+                        <td  data-label="№" scope="row" class="numbering">1</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="pop">
+                        <td  data-label="№" scope="row" class="numbering">2</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="element-group table-status table__status mt-3">
+              <div class="element-title">
+                  <h4>5.Упаковка</h4>
+                  <img src="../img/arrow_up.png" alt="" width="24px" height="24px">
+              </div>
+              <div class="element-link">
+                  <div class="link-search">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск сотрудника">
+                  </div>
+                  <button class="element-btn" id="openModalEtited">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21.5 6.30639L17.8475 2.65234L14.3741 6.30639L18.1786 9.80639L21.5 6.30639Z"
+                              fill="white" />
+                          <path d="M4 16.8596V20.4996H7.6586L18.1786 9.80639L14.3741 6.30639L4 16.8596Z"
+                              fill="#0062F5" fill-opacity="0.12" />
+                          <path
+                              d="M14.3741 6.30639L17.8475 2.65234L21.5 6.30639L18.1786 9.80639M14.3741 6.30639L4 16.8596V20.4996H7.6586L18.1786 9.80639M14.3741 6.30639L18.1786 9.80639"
+                              stroke="white" stroke-width="2" stroke-linejoin="round" />
+                      </svg>
+                      Редактировать список сотрудников</button>
+                                         <!-- Модальное окно -->
+      <div class="modal" id="newsletterModal" style="display: none;">
+          <div class="modal-edit">
+              <div class="modal-header">
+                  <h5 class="">Выберите сотрудников из списка
+                    на операцию - Крой</h5>
+                  <button type="button" class="btn-close arrow-next" id="closeModalEdited"></button>
+                </div>
+
+                <div class="table-edit">
+                  <div class="table-serach">
+                      <img src="../img/search.png" alt="" width="24px" height="24px">
+                      <input type="text" placeholder="Поиск">
+                  </div>
+                  <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">Статус</th>
+                          <th scope="col">Должность</th>
+                        </tr>
+                      </thead>
+                      <tbody id="employeeTable">
+                        <tr data-id="1">
+                          <th scope="row" class="numbering">1</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="2">
+                          <th scope="row" class="numbering">2</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-absent">Технолог</td>
+                      
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="3">
+                          <th scope="row" class="numbering">3</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-absent">Технолог</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="4">
+                          <th scope="row" class="numbering">4</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                         
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="5">
+                          <th scope="row" class="numbering">5</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          <td class="job-workin">Швея</td>
+                          
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="6">
+                          <th scope="row" class="numbering">6</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-absent">отсутствует</span></td>
+                          <td class="job-workin">Швея</td>
+                        
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                        <tr data-id="7"  class="bagbe-checkbox">
+                          <th scope="row" class="numbering">7</th>
+                          <td>Эшмат Ташматов</td>
+                          <td><span class="badge badge-working">на работе</span></td>
+                          
+                          <td>0502800202</td>
+                          <td><input type="checkbox" class="col-checkbox"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary bagbe-btn">Отправить сообщение</button>
+                </div>
+          </div>
+        </div>
+              </div>
+              <table class="table table-bordered table-hover">
+                  <thead class="table-status-header table-light">
+                      <tr>
+                          <th scope="col">№</th>
+                          <th scope="col">ФИО</th>
+                          <th scope="col">ВЫДАНО</th>
+                          <th scope="col">БРАКОВ</th>
+                          <th scope="col">ВЫПОЛНЕНО</th>
+                          <th scope="col">ОПЛАТА ЗА <br> 1 ЕДИНИЦУ</th>
+                          <th scope="col">НАКОПЛЕНО <br> ИТОГО</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="employeeTable" class="table-status-tbodys">
+                      <tr id="pop-1" class="pop-1">
+                        <td  data-label="№" scope="row" class="numbering">1</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+                      </tr>
+                      <tr id="pop">
+                        <td  data-label="№" scope="row" class="numbering">2</td>
+                        <td data-label="Фио">Никита Александрович</td>
+                        <td data-label="Выдано">500шт</td>
+                        <td data-label="Браков">5шт</td>
+                        <td data-label="Выполнено">400шт</td>
+                        <td data-label="Оплата за">10 c</td>
+                        <td data-label="Накопленно итого" class="el-green">4000 c</td>
+                        <td class="manag-info" data-label="№"><button class="group-btn">Изменить</button></td>
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+
+      </div>
+       </div>
+
+
+
+
+        <!-- <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div> -->
+    </div>
+    <script src="../js/production-management.js"></script>
+
+</body>
+
+</html>

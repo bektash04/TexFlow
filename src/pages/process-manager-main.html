@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/process-manager-main.css">
+    <link rel="stylesheet" href="../css/ production.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+    <title>Главная старница технолога</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item item">
+                    <a href="../../index.html" class="item active d-flex align-items-center">
+                        <i class="bi bi-house-door-fill me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/warehouse-profile.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span>Профиль</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/main-wallet.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Кошолек</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/main-setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Контент -->
+     <div class="main-container">
+        <div class="container">
+            <div class="content-list">
+                <div class="content p-4">
+                    <div class="process-text">
+                        <img src="../img/back.png" alt="" width="40px" height="40px">
+                        <h3> Технолог — Оля Николаевна</h3>
+                    </div>
+                    <h2 class="process-box">Управление производством</h2>
+                   
+                </div>
+                <div class="date-picker-wrapper">
+                    <img src="../img/natifications.png" class="natif-img" alt="" width="24px" height="24px">
+                </div>
+            </div>
+            <div class="table-status stock-status stock-status-progress mt-5">
+                <h2 class="table-status__title">Активные заказы</h2>
+                <table class="table table-bordered table-hover">
+                    <thead class="table-status-header table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Клиент</th>
+                            <th>Статус</th>
+                            <th>Общее количество</th>
+                            <th>Дата запуска</th>
+                            <th>Дата сдачи</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-status-tbodys">
+                        <tr  id="info-1">
+                            <td  data-label="ID"  class="numbering">1</td>
+                            <td  data-label="Клиент" >Никита Александрович</td>
+                            <td  data-label="Статус" ><span class="status-pending">в ожидании</span></td>
+                            <td  data-label="Общее количество" >3000</td>
+                            <td  data-label="Дата запуска" >31.12.2023</td>
+                            <td  data-label="Дата сдачи" >31.12.2023</td>
+                            <td class="status-btn"><button class="production-btn">Управление производством<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6954_31908)">
+                                  <path d="M9.5 6L15.5 12L9.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_6954_31908">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                  </clipPath>
+                                </defs>
+                              </svg></button>
+                            </td>
+                        </tr>
+                        <tr  id="info-1">
+                            <td data-label="ID" class="numbering">2</td>
+                            <td  data-label="Клиент">Никита Александрович</td>
+                            <td data-label="Статус" ><span class="status-purchase">закупка сырья</span></td>
+                            <td data-label="Общее количество">2700</td>
+                            <td data-label="Дата запуска" >31.12.2023</td>
+                            <td  data-label="Дата сдачи">31.12.2023</td>
+                            <td class="status-btn"><button class="production-btn">Управление производством<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6954_31908)">
+                                  <path d="M9.5 6L15.5 12L9.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_6954_31908">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                  </clipPath>
+                                </defs>
+                              </svg></button></td>
+                        </tr>
+                        <tr  id="baqbe-1">
+                            <td  data-label="ID" class="numbering">3</td>
+                            <td data-label="Клиент">Никита Александрович</td>
+                            <td  data-label="Статус"><span class="status-cutting">крой</span></td>
+                            <td  data-label="Общее количество">500</td>
+                            <td data-label="Дата запуска" >31.12.2023</td>
+                            <td data-label="Дата сдачи">31.12.2023</td>
+                            <td class="status-btn"><button class="production-btn">Управление производством<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6954_31908)">
+                                  <path d="M9.5 6L15.5 12L9.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_6954_31908">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.5)" />
+                                  </clipPath>
+                                </defs>
+                              </svg></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+     </div>
+    </div>
+
+</body>
+
+</html>

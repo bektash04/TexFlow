@@ -1,0 +1,228 @@
+:root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+  --prozrachnyy-rozovyy: #cc0093;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+
+.stock-status {
+  border-radius: 20px;
+  padding: 20px;
+width: 1060px;
+}
+.stock-status h2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+}
+
+/* .production-select {
+  border-radius: 12px;
+  padding: 10px;
+  width: 1070px;
+  height: 269px;
+  background: var(--seryy1);
+} */
+.production-ststus {
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.date-selector {
+  display: flex;
+  background: var(--belyy);
+  align-items: center;
+  column-gap: 12px;
+  border-radius: 12px;
+  padding: 4px 16px;
+  width: 300px;
+  height: 50px;
+  margin-left: 760px;
+}
+
+.production-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 268px;
+  height: 36px;
+  background: var(--osnovnoy-siniy);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--belyy);
+  border: none;
+  margin-right: -30px !important;
+}
+
+#baqbe-1 {
+  border: none !important;
+}
+
+@media (max-width: 1200px) {
+  .production-select {
+    width: 980px;
+    height: auto;
+  }
+
+  .stock-status{
+    width: 100%;
+  }
+  .date-selector {
+    margin-left: 470px;
+  }
+  .production-ststus {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .production-select {
+    width: 600px;
+    height: auto;
+  }
+  .date-selector {
+    margin-left: 205px;
+  }
+  .production-ststus {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .production-select {
+    width: 0px;
+    border: none !important;
+    background: none !important;
+  }
+}
+
+@media (max-width: 576px) {
+}
+
+@media (max-width: 480px) {
+
+  .date-selector {
+    margin-left: -10px;
+    width: 400px;
+  }
+  .primy-w1 {
+    font-size: 20px;
+    margin-top: 114px !important;
+    display: block;
+  }
+  .desc-w1 {
+    font-size: 14px;
+    display: block;
+  }
+
+  .table-status{
+    background: none !important;
+    padding: 0 10px;
+   }
+   
+   .table-status table tbody tr {
+     text-align: end;
+     padding: 16px;
+     border-radius: 16px;
+     width: 100% !important;
+     background: var(--belyy) !important;
+   }
+   .table-status table tbody tr:hover {
+     background: none !important; 
+     cursor: default !important; 
+   }
+   .table-status th {
+     display: none;
+   }
+   .production-btn{
+    width: 100% ;
+    font-weight: 400;
+   }
+   .table-status td {
+     position: relative;
+     padding-left: 50%;
+     text-align: end;
+     border: none;
+     margin-top: -15px;
+   }
+   .table-status td:before {
+     content: attr(data-label);
+     position: absolute;
+     left: 10px;
+     top: 10px;
+     white-space: nowrap;
+     font-weight: bold;
+     font-family: var(--font-family);
+     font-weight: 300;
+     font-size: 14px;
+     color: var(--seryy4);
+   }
+   .table-status-tbodys{
+     display: flex !important;
+     flex-direction: column !important;
+     row-gap: 12px !important;
+   }
+   #info-1,
+   #info-2,
+   #info-3,
+   #info-4:hover{
+     background: var(--belyy)!important; 
+     cursor: default !important; 
+     border: none;
+   }
+   .statistic{
+    width: 210px;
+   }
+  
+}
+
+@media (max-width: 425px) {
+  .date-selector {
+   
+    width: 360px;
+    height: 45px;
+  }
+
+  .statistic{
+    width: 185px;
+   }
+}
+
+@media (max-width: 375px) {
+  .date-selector{
+    width: 328px;
+  }
+  .statistic{
+    width: 160px;
+   }
+}
+@media (max-width: 320px) {
+  .date-selector{
+    width: 290px;
+  }
+  .statistic{
+    width: 135px;
+   }
+}

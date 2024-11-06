@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/employees.css">
+    <link rel="stylesheet" href="../css/employees-2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header ">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="../img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-house-door me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/production.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-grid me-2"></i>
+                        <span class="nav-production">Производство</span><span class="nav-shop weq">Цех</span>
+                    </a>
+                </li>
+                <li class="nav-item item">
+                    <a href="#" class="item active d-flex align-items-center">
+                        <i class="bi bi-people-fill me-2"></i>
+                        <span class="nav-production">Сотрудники</span><span class="nav-shop">Персонал</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/finance.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/orders-2.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span>  Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/clients.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                        <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="../pages/setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="container">
+                <div class="content p-4" style="position: relative;">
+                    <a class="back__img" href=""> <img src="../img/back.png" alt="" class="back__img"></a>
+                    <h1 class="primy-w1">Персонал — Оля Николаевна</h1>
+                    <div class="menu-dots" id="menuDots">&#x22EE;</div>
+<div class="button-em">
+    <button type="button" class="btn em-btn-w1" id="openModal">Удалить</button>
+    <button type="button" class="btn active btn-primary" id="openInviteModal">Редактировать должность</button>
+</div>
+                </div>
+
+                <!-- Модальное окно -->
+                <div class="modal" id="newsletterModal" style="display: none;">
+                    <div class="modal-dialog modal__cont">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title ">Удалить сотрудника?</h5>
+                                <button type="button" class="btn-close arrow-next" id="closeModal"></button>
+                            </div>
+                            <form>
+                                <div class="modal-desc">
+                                    <p>Сотрудник <span>Оля Андреева</span> будет удален из списка сотрудников</p>
+                                </div>
+                                <div class="modal__btns">
+                                    <button type="button" class="btn btn-secondary" id="closeFooter">Отмена</button>
+                                    <button type="button" class="btn btn-primary modal-btn"
+                                        id="deleteEmployee">Удалить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal" id="createModal" style="display: none;">
+                    <div class="modal-dialog-info">
+                        <div class="modal-header">
+                            <div class="modal-infos"><img src="../img/checkbox_green.png" alt="" width="50px"
+                                    height="50px"></div>
+                            <button type="button" class="btn-close" id="closeInviteModal"></button>
+                        </div>
+                        <div class="infos-title">
+                            <h5>успешно удаление!</h5>
+                            <p>Сотрудник <span>Оля Андреева </span>удален из списка сотрудников</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="modal" id="inviteModal" style="display: none;">
+                    <div class="modal-dialog-w2">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">Пригласить сотрудника</h5>
+                            <button type="button" class="btn-close" id="closeInviteModalBtn"></button>
+                        </div>
+                        <form>
+                            <div class="links__url mb-5">
+                                <img src="../img/circle_ava.png" alt="" width="32px" height="32px">
+                                <h4>Оля Морозова <p>Швея / Технолог</p>
+                                </h4>
+                            </div>
+                            <div class="choose">
+                                <h5>Выбрать должность:</h5>
+                                <ul class="choose__form">
+                                    <li> <input type="checkbox"> Шфея</li>
+                                    <li><input type="checkbox">Технолог</li>
+                                    <li><input type="checkbox">Упаковщик</li>
+                                    <li><input type="checkbox">Утюжник</li>
+                                </ul>
+                            </div>
+                            <button id="openNewModal" class="btn btn-primary choose-btnNew"><svg width="25" height="25"
+                                    viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7265_6084)">
+                                        <path d="M12.5301 5.5L12.5117 19.5" stroke="#0062F5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M5.5 12.5H19.5" stroke="#0062F5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_7265_6084">
+                                            <rect width="24" height="24" fill="white" transform="translate(0.5 0.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>Создать новый</button>
+                        </form>
+                        <button type="button" class="btn btn-primary btn-link" id="copyLink">Сохранить
+                            изменения</button>
+                    </div>
+                </div>
+                <div class="modal" id="newModal" style="display: none;">
+                    <div class="modal-dialog-w2">
+                        <div class="modal-header">
+                            <h5 class="modal-title modal-Newtitle"><img src="../img/back.png" alt="" width="35px"
+                                    height="35px">Новая роль</h5>
+                            <button type="button" class="btn-close" id="closeNewModal"></button>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="modal-list">
+                                    Роль
+                                    <input type="text" placeholder="Введите назвение роли">
+                                </li>
+                            </ul>
+                            <ul class="choose__form">
+                                <h5 class="choose-text">Выбрать страницы для доступа:</h5>
+                                <li> <input type="checkbox">Производство</li>
+                                <li><input type="checkbox">Склад</li>
+                                <li><input type="checkbox">Список сотрудников</li>
+                                <li><input type="checkbox">Профиль сотрудников</li>
+                                <li><input type="checkbox">Создание кврточки заказа</li>
+                                <li><input type="checkbox">Финансы</li>
+
+                            </ul>
+                            <button type="button" class="btn btn-primary btn-link" id="copyLink">Сохранить
+                                изменения</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="opder__person">
+                    <div class="person  mt-3">
+                        <img class="person__profile" src="../img/circle_ava_profile.png" alt="" width="174px"
+                            height="174px">
+                        <div>
+                            <h2 class="person__title">Оля Николевна</h2>
+                            <p class="person__desc">Шфея</p>
+                        </div>
+                        <div>
+                            <p class="person__contact">КОНТАКТЫ</p>
+                            <span class="person__phone"><img src="../img/phone.png" alt="" width="24px"
+                                    height="24px">+996502800202</span>
+                            <p class="person__in"><span>ИИН </span>778313903</span></p>
+                            <span class="person__phone"><img src="../img/calendar-three.png" alt="" width="24px"
+                                    height="24px">16.02.00</span>
+
+                        </div>
+                    </div>
+
+                    <div class="balance__result">
+                        <div class="balance mt-3">
+                            <img src="../img/statistic/green_wallet.png" alt="">
+                            <p class="balance__desc">Текущий баланс</p>
+                            <div class="balance__salary">
+                                <p class="balance__salary-desc">
+                                    2500c
+                                </p>
+                                <button type="button" class="btn btn-primary salary-btn">Выдать зарплату</button>
+                            </div>
+                        </div>
+                        <div class="result mt-3">
+                            <h2 class="result__title">Результаты работ</h2>
+                            <div class="resilt__arrow-left">
+                                <svg width="87" height="55" viewBox="0 0 87 55" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M86.7429 2.14651L52.1313 1.48829L1.33647 54.5849" stroke="#636363" />
+                                </svg>
+                                <p>1250<span>успешно произведеных товаров </span></p>
+                            </div>
+                            <svg width="141" class="result__circle" height="141" viewBox="0 0 141 141" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="70.5" cy="70.5" r="70.5" fill="#0062F5" />
+                                <path d="M141 70.5C141 63.102 139.836 55.7502 137.549 48.7143L70.5 70.5H141Z"
+                                    fill="#F5001D" />
+                            </svg>
+                            <div class="resilt__arrow-right">
+                                <p>4<span>брак </span></p>
+                                <svg width="32" height="46" viewBox="0 0 32 46" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.500201 45.0006L15.9996 0.999373L31.4997 1.00002" stroke="#636363" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- календарь -->
+ 
+                    <div class="calendar-container mt-3">
+                        <h2 class="calendar-title">Журнал посещаемости</h2>
+                        <div class="calendar-header">
+                            <button class="prev-month">&lt;</button>
+                            <span class="month-year">Октябрь 2024</span>
+                            <button class="next-month">&gt;</button>
+                        </div>
+                        <div class="calendar-days">
+                            <div>Пн</div>
+                            <div>Вт</div>
+                            <div>Ср</div>
+                            <div>Чт</div>
+                            <div>Пт</div>
+                            <div>Сб</div>
+                            <div>Вс</div>
+                        </div>
+                        <div class="calendar-dates"></div>
+                    </div>
+                    <!-- календарь -->
+                </div>
+                <div>
+                    <div class="orders-item">
+                        <div class="table-status table__status">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 class="primy-w4">Активные заказы <span>5450c</span></h2>
+                            </div>
+
+                            <table class="table table-bordered  table-hover">
+                                <thead class="table-status-header table-light">
+                                    <tr id="info-1">
+                                        <th>ID</th>
+                                        <th>НАЗВАНИЕ ТОВАРА</th>
+                                        <th>КОЛИЧЕСТВО</th>
+                                        <th>ДАТА ВЫПЛАТЫ</th>
+                                        <th>СУМА</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-status-tbodys">
+                                    <tr id="info-1">
+                                        <td data-label="ID" class="order__num">1</td>
+                                        <td data-label="Назвение">Платье</td>
+                                        <td data-label="Количество">120</td>
+                                        <td data-label="Дата выплаты">31.12.2023</td>
+                                        <td data-label="Сумма">1200с</td>
+                                    </tr>
+                                    <tr id="info-1">
+                                        <td data-label="ID" class="order__num">2</td>
+                                        <td data-label="Назвение">Мужские брюки</td>
+                                        <td data-label="Количество">25</td>
+                                        <td data-label="Дата выплаты">31.12.2023</td>
+                                        <td data-label="Сумма">1200с</td>
+                                    </tr>
+                                    <tr id="info-1">
+                                        <td data-label="ID" class="order__num">3</td>
+                                        <td data-label="Назвение">Женская блуза</td>
+                                        <td data-label="Количество">50</td>
+                                        <td data-label="Дата выплаты">31.12.2023</td>
+                                        <td data-label="Сумма">1200с</td>
+                                    </tr>
+                                    <tr id="info-1">
+                                        <td data-label="ID" class="order__num">4</td>
+                                        <td data-label="Назвение">Женская блуза</td>
+                                        <td data-label="Количество">40</td>
+                                        <td data-label="Дата выплаты">31.12.2023</td>
+                                        <td data-label="Сумма">1200с</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="order order__item">
+                            <div class="order-list">
+                                <h4 class="primy-w5">Уведомление</h4>
+                                <a href="">Все<img src="../img/arrow_blue.png" alt="" width="20px"
+                                    height="20px"></a>
+                            </div>
+                            <p class="desc-w6">31 дек, 2023</p>
+                            <div class="order-avater">
+                                <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                            <div>
+                                <form class="emplod-btns">
+                                    <button class="custom-disabled" >Отключить</button>
+                                    <button class="custom-blue">Принять</button>
+                                </form>
+                            </div>
+                            <hr>
+                            <div>
+                                <div class="order-avater">
+                                    <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                                    <div>
+                                        <h5 class="primy-w6">Оля Морозова</h5>
+                                        <p class="desc-w7">Технолог</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="emplod-btns">
+                                <button class="custom-disabled" >Отключить</button>
+                                <button class="custom-blue">Принять</button>
+                            </form>
+                            <hr>
+                            <div>
+                                <div class="order-avater">
+                                    <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                                    <div>
+                                        <h5 class="primy-w6">Оля Морозова</h5>
+                                        <p class="desc-w7">Технолог</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="emplod-btns">
+                                <button class="custom-disabled" >Отключить</button>
+                                <button class="custom-blue">Принять</button>
+                            </form>
+                            <hr>
+                            <div>
+                                <div class="order-avater">
+                                    <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                                    <div>
+                                        <h5 class="primy-w6">Оля Морозова</h5>
+                                        <p class="desc-w7">Технолог</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="emplod-btns">
+                                <button class="custom-disabled" >Отключить</button>
+                                <button class="custom-blue">Принять</button>
+                            </form>
+                            <hr>
+                            <div>
+                                <div class="order-avater">
+                                    <img src="../img/client-01.png" alt="" width="32px" height="32px">
+                                    <div>
+                                        <h5 class="primy-w6">Оля Морозова</h5>
+                                        <p class="desc-w7">Технолог</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="emplod-btns">
+                                <button class="custom-disabled" >Отключить</button>
+                                <button class="custom-blue">Принять</button>
+                            </form>
+                        </div>
+                    </div>
+
+                  
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="natification">
+            <div>
+                <img src="../img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="../img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="../img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../js/employees-2.js"></script>
+</body>
+
+</html>

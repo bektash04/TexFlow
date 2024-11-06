@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div id="sidebar" class="sidebar d-flex flex-column p-3 ">
+            <a href="#">
+                <img src="./src/img/logo.png" alt="Логотип" class="logo-tex" width="130px">
+            </a>
+
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item item">
+                    <a href="#" class="item active d-flex align-items-center">
+                        <i class="bi bi-house-door-fill me-2"></i>
+                        <span class="nav-production">Главная страница</span><span class="nav-shop">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./src/pages/production.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-grid me-2"></i>
+                        <span class="nav-production">Производство</span><span class="nav-shop weq">Цех</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./src/pages/employees.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-people me-2"></i>
+                        <span class="nav-production">Сотрудники</span><span class="nav-shop">Персонал</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="./src/pages/finance.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-wallet2 me-2"></i>
+                        <span>Финансы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./src/pages/orders-2.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-card-list me-2"></i>
+                        <span> Заказы</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./src/pages/client-profile.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                        <span>Клиенты</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-finance">
+                    <a href="./src/pages/setting.html" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-gear me-2"></i>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <!-- Контент -->
+        <div class="main-container">
+            <div class="container">
+                <div class="content-list">
+                    <div class="content p-4">
+                        <h2 class="primy-w1">Добро пожаловать, Эржигит</h2>
+                        <p class="desc-w1">Взгляните на обзор вашей фабрики</p>
+                    </div>
+                    <div class="calendar">
+                        <img src="./src/img/calendar-pic.png" width="20px" alt="calendar icon">
+                        <input type="text" class="form-control" id="date-range-picker"
+                            aria-describedby="date-range-icon">
+                        <img class="rotate-180 " src="./src/img/arrow-down.png" alt="">
+                    </div>
+                </div>
+                <div class="static">
+                    <div class="content">
+                        <div class="statistic">
+                            <img src="./src/img/statistic/circle_icons.png" alt="" width="44px" height="44px">
+                            <p class="desc-w3">Всего произведено</p>
+                            <h4 class="primy-w3">65420</h4>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="statistic">
+                            <img src="./src/img/statistic/circle_icons1.png" alt="" width="44px" height="44px">
+                            <p class="desc-w3">Выполненных задач</p>
+                            <h4 class="primy-w3">14</h4>
+                        </div>
+                    </div>
+                    <div class="content ">
+                        <div class="statistic">
+                            <img src="./src/img/statistic/circle_icons2.png" alt="" width="44px" height="44px">
+                            <p class="desc-w3">Количество браков</p>
+                            <h4 class="primy-w3">21</h4>
+                        </div>
+                    </div>
+                    <div class="content ">
+                        <div class="statistic">
+                            <img src="./src/img/statistic/circle_icons3.png" alt="" width="44px" height="44px">
+                            <p class="desc-w3">Расходы</p>
+                            <h4 class="primy-w3">158 987c</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orders-item">
+                    <div class="table-status stock-status mt-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="primy-w4">Активные заказы</h2>
+                            <a href="#" class=" desc-w4 text-primary text-decoration-none">Перейти к списку заказов <img
+                                    src="./img/arrow_blue.png" alt=""></a>
+                        </div>
+                        <table class="table table-bordered table-hover">
+                            <thead class="table-status-header table-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Клиент</th>
+                                    <th>Статус</th>
+                                    <th>Дата запуска</th>
+                                    <th>Дата сдачи</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="table-status-tbodys">
+                                <tr id="info-1">
+                                    <td data-label="ID" class="numbering">1</td>
+                                    <td data-label="Клиент">Никита Александрович</td>
+                                    <td data-label="Статус"><span class="status-pending">в ожидании</span></td>
+                                    <td data-label="Дата запуска">31.12.2023</td>
+                                    <td data-label="Дата сдачи">31.12.2023</td>
+                                </tr>
+                                <tr id="info-2">
+                                    <td data-label="ID" class="numbering">1</td>
+                                    <td data-label="Клиент">Никита Александрович</td>
+                                    <td data-label="Статус"><span class="status-purchase">запуска сырья</span></td>
+                                    <td data-label="Дата запуска">31.12.2023</td>
+                                    <td data-label="Дата сдачи">31.12.2023</td>
+                                </tr>
+                                <tr id="info-3">
+                                    <td data-label="ID" class="numbering">1</td>
+                                    <td data-label="Клиент">Никита Александрович</td>
+                                    <td data-label="Статус"><span class="status-cutting">крой</span></td>
+                                    <td data-label="Дата запуска">31.12.2023</td>
+                                    <td data-label="Дата сдачи">31.12.2023</td>
+                                </tr>
+                                <tr id="info-4">
+                                    <td data-label="ID" class="numbering">1</td>
+                                    <td data-label="Клиент">Никита Александрович</td>
+                                    <td data-label="Статус"><span class="status-production">производство</span></td>
+                                    <td data-label="Дата запуска">31.12.2023</td>
+                                    <td data-label="Дата сдачи">31.12.2023</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="order mt-4">
+                        <div class="order-list">
+                            <h4 class="primy-w5">Запросы на добавление<br> в штат</h4>
+                            <a href="">Все<img src="./src/img/arrow_blue.png" alt="" width="20px"
+                                height="20px"></a>
+
+                        </div>
+                        <p class="desc-w6">31 дек, 2023</p>
+                        <div class="order-avater">
+                            <img src="./src/img/client-01.png" alt="" width="32px" height="32px">
+                            <div>
+                                <h5 class="primy-w6">Оля Морозова</h5>
+                                <p class="desc-w7">Технолог</p>
+                            </div>
+                        </div>
+                        <form class="avater-btns">
+                            <button type="submit" class="custom-disabled">Отключить</button>
+                            <button type="submit" class="custom-blue">Принять</button>
+                        </form>
+                        <hr>
+                        <div>
+                            <div class="order-avater">
+                                <img src="./src/img/client-01.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="avater-btns">
+                            <button class="custom-disabled">Отключить</button>
+                            <button class="custom-blue">Принять</button>
+                        </form>
+                        <hr>
+                        <div>
+                            <div class="order-avater">
+                                <img src="./src/img/client-01.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="avater-btns">
+                            <button class="custom-disabled">Отключить</button>
+                            <button class="custom-blue">Принять</button>
+                        </form>
+                        <hr>
+                        <div>
+                            <div class="order-avater">
+                                <img src="./src/img/client-01.png" alt="" width="32px" height="32px">
+                                <div>
+                                    <h5 class="primy-w6">Оля Морозова</h5>
+                                    <p class="desc-w7">Технолог</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="avater-btns">
+                            <button class="custom-disabled">Отключить</button>
+                            <button class="custom-blue">Принять</button>
+                        </form>
+                        
+                        
+                    </div>
+                </div>
+                <div class="best-content">
+                    <div class="best mt-4">
+                        <div class="best-item d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="best-text">Лучшие швеи месяца</h2>
+                            <img src="./src/img/badge1.png" alt="" width="67px" height="67px">
+                        </div>
+                        <table class="table table-bordered table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>ФИО</th>
+                                    <th>КОЛ-ВО</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="">
+                                    <td class="numbering">1</td>
+                                    <td class="circle_icons">
+                                        <img src="./src/img/circle_ava.png" alt="" width="32px" height="32px">
+                                        <div class="circle_list">
+                                            <h5 class="primy-w6">Оля Николаевна</h5>
+                                            <p class="desc-w8">Швея</p>
+                                        </div>
+                                    </td>
+                                    <td>300шт</td>
+
+                                </tr>
+                                <tr class="">
+                                    <td class="numbering">2</td>
+                                    <td class="circle_icons">
+                                        <img src="./src/img/circle_ava.png" alt="" width="32px" height="32px">
+                                        <div class="circle_list">
+                                            <h5 class="primy-w6">Оля Николаевна</h5>
+                                            <p class="desc-w8">Швея</p>
+                                        </div>
+                                    </td>
+                                    <td>270шт</td>
+
+                                </tr>
+                                <tr class="best-bagde">
+                                    <td class="numbering">3</td>
+                                    <td class="circle_icons">
+                                        <img src="./src/img/circle_ava.png" alt="" width="32px" height="32px">
+                                        <div class="circle_list">
+                                            <h5 class="primy-w6">Оля Николаевна</h5>
+                                            <p class="desc-w8">Швея</p>
+                                        </div>
+                                    </td>
+                                    <td>265шт</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="currency mt-4">
+                        <h2 class="primy-w9">Курсы валют НБКР</h2>
+                        <table class="table table-bordered table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ВАЛЮТА</th>
+                                    <th>ПОКУПКА</th>
+                                    <th>ПРОДАЖА</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="curr">
+                                        <img src="./src/img/currency/USD.png" alt="" width="40px" height="26px">
+                                        <p>USD</p>
+                                    </td>
+                                    <td>87.70</td>
+                                    <td>88.30</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="curr">
+                                        <img src="./src/img/currency/EUR.png" alt="" width="40px" height="26px">
+                                        <p>EUR</p>
+                                    </td>
+                                    <td>87.70</td>
+                                    <td>88.30</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="curr">
+                                        <img src="./src/img/currency/RUS.png" alt="" width="40px" height="26px">
+                                        <p>RUS</p>
+                                    </td>
+                                    <td>87.70</td>
+                                    <td>88.30</td>
+
+                                </tr>
+                                <tr class="best-bagde ">
+                                    <td class="curr"><img src="./src/img/currency/KZT.png" alt="" width="40px"
+                                            height="26px">
+                                        <p>KZT</p>
+                                    </td>
+                                    <td>87.70</td>
+                                    <td>88.30</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="percent mt-4">
+                        <h1 class="percent-primy">Процент браков</h1>
+
+                        <div class="chart-container">
+                            <div class="chart">
+
+                                <svg width="141" height="141" viewBox="0 0 141 141" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="70.5" cy="70.5" r="70.5" fill="#0062F5" />
+                                    <path d="M141 70.5C141 63.102 139.836 55.7502 137.549 48.7143L70.5 70.5H141Z"
+                                        fill="#F5001D" />
+                                </svg>
+                                <svg class="prect-w1" width="87" height="51" viewBox="0 0 87 51" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M86.443 0.340132L76.5002 24.9997L0.499998 50.5" stroke="#636363" />
+                                </svg>
+                                <svg class="prect-w2" width="39" height="58" viewBox="0 0 39 58" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.600842 57.0234L21.3574 51.8986L38 0.499999" stroke="#636363" />
+                                </svg>
+                            </div>
+
+
+                            <div class="label label-success">
+                                <span class="label-num">95%</span>
+                                <p class="label-desc">успешно завершенных заказов</p>
+                            </div>
+                            <div class="label label-defect">
+                                <span class="label-num">5%</span>
+                                <p>брака</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="natification">
+            <div>
+                <img src="./src/img/natifications.png" alt="">
+            </div>
+            <div class="avatar"><img src="./src/img/avatar.png" alt="" width="32px" height="32px">
+                <div class="description">
+                    <h3 class="primy-w2">Эржигит</h3>
+                    <p class="desc-w2">Админ</p>
+                </div>
+                <img src="./src/img/arrow-right.png" alt="" width="40px" height="40px">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="./src/js/main.js"></script>
+
+
+</body>
+
+</html>

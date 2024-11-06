@@ -1,0 +1,236 @@
+root {
+  --osnovnoy-siniy: #0062f5;
+  --belyy: #fff;
+  --seryy4: #9f9f9f;
+  --black: #000;
+  --error-red: #f5001d;
+  --seryy5: #636363;
+  --prozrachnyy-oranzhevyy: #f1b00a;
+  --oranzhevyy: #f1b00a;
+  --prozrachnyy-siniy: #0062f546;
+  --zelenyy: #00cc08;
+  --seryy1: #f5f7fa;
+
+  --font-family: "Manrope", sans-serif;
+  --second-family: "SF Pro Display", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Poppins", sans-serif;
+  --font4: "Roboto", sans-serif;
+  --font5: "Roboto Mono", sans-serif;
+  --font6: "Krona One", sans-serif;
+}
+
+.first-link {
+  border: none !important;
+  background: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: var(--black);
+}
+.first-link.active {
+  border: none !important;
+  border-bottom: 4px solid var(--osnovnoy-siniy) !important;
+  transition: 0.3s;
+}
+
+.first-order {
+  border-radius: 20px;
+  padding: 30px;
+  width: 1060px;
+  background: var(--belyy);
+}
+
+.first-order {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  text-align: start;
+  color: var(--osnovnoy-siniy);
+}
+
+.first-desc {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--seryy5);
+  max-width: 638px;
+}
+
+.create-order h4 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: start;
+  color: var(--black);
+  margin-top: -10px;
+}
+.create-order button {
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 239px;
+  height: 50px;
+  margin-top: -20px;
+}
+
+
+.order-nav .nav-item{
+  list-style: none;
+}
+.first-block {
+  padding: 20px;
+  border-radius: 20px;
+  width: 1060px;
+  background-color: var(--belyy);
+  margin-bottom: 50px;
+}
+.first-block h4 {
+  margin-bottom: 20px;
+}
+/* 
+.status-bagde {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 10px 12px;
+  width: 87px;
+  height: 26px;
+  background: var(--zelenyy);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  color: var(--belyy);
+} */
+
+.job-status {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.isactive {
+  border-radius: 50px;
+  padding: 10px;
+  width: 36px;
+  height: 36px;
+  background: var(--seryy4) !important;
+  color: #f5f7fa !important;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--belyy);
+}
+.table thead {
+    margin-top: 10px !important;
+}
+table tbody tr th {
+  margin-top: 35px !important;
+}
+.order-gtd{
+  margin-top: 0px;
+}
+
+@media (max-width: 1400px) {
+  .first-order{
+    width: 100% !important;
+    padding: 0 10px;
+  }
+
+  .first-block{
+    width: 100% !important;
+  }
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 576px) {
+}
+
+@media (max-width: 480px) {
+
+  .natification{
+    display: none;
+  }
+  .order-gtd{
+    border: none;
+  }
+  .order-nav{
+    margin-top: 20px;
+    display: flex !important;
+    justify-content: space-around;
+    column-gap: 20px !important;
+  }
+  .first-link{
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .nav .nav-tabs{
+    padding:  0 16px;
+  }
+  .create-order h4{
+    font-size: 20px;
+  }
+  .create-order{
+    display: flex;
+    flex-direction: column;
+  }
+.first-order{
+  padding: 16px;
+}
+
+  .first-order p{
+    font-size: 14px;
+
+  }
+  .first-desc{
+    font-size: 14px !important;
+  }
+  .create-order button{
+    margin-top: 20px;
+    height: 45px;
+    
+  }
+  .first-block{
+    padding: 16px;
+    overflow: visible;
+  }
+  #info-of{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    border: none;
+    
+  }
+  #info-of:hover{
+    background: var(--belyy) !important;
+  }
+.page-link.isactive  {
+  width: 30px !important;
+  height: 30px !important;
+  background: var(--seryy4) !important;
+  border-radius: 50px !important;
+  }
+  .page-item{
+    margin-bottom: 80px;
+  }
+  
+
+}
+
+@media (max-width: 425px) {
+/* Ваши стили для маленьких смартфонов */
+}
+
+@media (max-width: 375px) {
+/* Ваши стили для маленьких смартфонов */
+}

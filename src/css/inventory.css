@@ -362,7 +362,12 @@
   .natification {
     display: none;
   }
-
+.primy-w1{
+  display: block !important;
+}
+.content-list{
+  margin-top: - 0 !important;
+}
   .inven-input {
     display: flex !important;
     justify-content: end !important;

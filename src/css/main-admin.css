@@ -22,7 +22,7 @@
 }
 
 .content-name {
-  margin-top: 110px;
+
   margin-left: -35px;
 }
 .content-list {
@@ -35,12 +35,10 @@
   column-gap: 30px;
   cursor: pointer;
 }
-.natif-img {
-  margin-top: 110px;
-}
+
 .content-back {
-  margin-top: 60px;
-  margin-bottom: 20px;
+  margin-top: -60px;
+
 }
 .primy-w4 {
   font-family: var(--font-family);
@@ -311,12 +309,14 @@
  
  
   .content-back {
-    margin-top: 0;
+    margin-top: -20%;
+    margin-left: -55%;
   }
   .content-name {
     font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 110px;
+    margin-top: 20px;
+    margin-left: -120px;
+
   }
   .natif-img {
     display: block;
@@ -324,15 +324,10 @@
   .date-picker-wrapper {
     display: flex;
 }
-.calendar{
-  width: 380px !important;
-  margin-left: -160px !important;
-  margin-top: 110px;
-}
+
 
 .natif-img {
-  margin-top: 90px;
-  margin-left: -20px;
+
     order: 2; 
 }
 
@@ -420,14 +415,9 @@ margin-left: -10px !important;
   .theadMainAdmin-list{
     margin-left: 110px;
   }
-  .calendar{
-    width: 330px !important;
-    margin-left: -180px !important;
-    margin-top: 110px;
-  }
+ 
   
   .natif-img {
-    margin-top: 90px;
       order: 2; 
   }
 }
@@ -437,9 +427,7 @@ margin-left: -10px !important;
     margin-left: 70px;
   }
 
-  .calendar{
-    width: 300px !important;
-  }
+ 
   
  
 }
@@ -458,8 +446,6 @@ margin-left: -10px !important;
   width: 100px;
  
 }
-.calendar{
-  width: 250px !important;
-}
+
 
 }

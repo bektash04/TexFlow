@@ -46,7 +46,7 @@ width: 1060px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-top: 20px;
+
 }
 
 .date-selector {
@@ -58,7 +58,6 @@ width: 1060px;
   padding: 4px 16px;
   width: 300px;
   height: 50px;
-  margin-left: 760px;
 }
 
 .production-btn {
@@ -123,13 +122,18 @@ width: 1060px;
 
 @media (max-width: 480px) {
 
+  .content-list{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
   .date-selector {
     margin-left: -10px;
     width: 400px;
   }
   .primy-w1 {
     font-size: 20px;
-    margin-top: 114px !important;
     display: block;
   }
   .desc-w1 {

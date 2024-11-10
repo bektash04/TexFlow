@@ -37,7 +37,7 @@
   font-size: 24px;
 }
 .button-em {
-  margin-top: 110px;
+ 
   display: flex;
   column-gap: 20px;
 }
@@ -495,7 +495,7 @@ textarea {
     display: block;
     font-size: 20px;
     margin-left: -20px;
-    margin-top: 20px;
+    
     cursor: pointer;
   }
 
@@ -505,7 +505,7 @@ textarea {
     width: 100%;
     height: 3px;
     background: var(--osnovnoy-siniy);
-    top: 25%;
+    top: 85%;
     border-radius: 50px;
   }
 
@@ -514,16 +514,17 @@ textarea {
     font-size: 18px;
     margin-left: -20px;
     font-family: 400;
-    margin-top: 20px;
+ 
     cursor: pointer;
     margin-left: 20px;
   }
   
   .menu-dots {
     display: block;
-    margin-top: 80px;
     font-weight: 900;
-    margin-right: -10px;
+    margin-left: 300px;
+    margin-top: -60px;
+
   }
   .button-em {
     position: absolute;
@@ -567,7 +568,7 @@ textarea {
     padding: 10px 20px;
     width: 294px;
     height: 45px;
-    margin-top: -80px;
+
   }
   .modal-dialog {
     width: 328px;

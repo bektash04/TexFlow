@@ -560,6 +560,10 @@
     width: 328px;
     height: 500px;
   }
+
+  .description-list{
+    margin-left: -60px;
+  }
   .colors-pink {
     display: grid;
     grid-template-columns:1fr;

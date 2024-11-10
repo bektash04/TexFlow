@@ -25,12 +25,14 @@
   top: 0;
 }
 .content-list {
-  max-width: 1060px;
-  margin-top: 60px;
+  position: relative;
 }
 .content-list img {
   margin-bottom: 20px;
-  margin-top: 95px;
+}
+.const-bac{
+  position: absolute;
+  top: -25%;
 }
 .btn-red {
   border: 1.5px solid var(--error-red);
@@ -322,12 +324,18 @@
   .content img {
     margin-top: 10px;
   }
+  .content-list {
+    position: static;        
+        margin-top: 0;           
+           
+        flex-direction: row; 
+  }
   .process-box{
     font-size: 20px;
   }
   .menu-dotsProfile {
     display: block;
-    margin-top: 55px;
+    margin-top: -5px;
     font-weight: 900;
   }
   .profile-btns.show-buttons {

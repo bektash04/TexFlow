@@ -20,7 +20,7 @@
 }
 .back__img {
   position: absolute;
-  margin-top: 30px;
+  margin-top: -30px;
 }
 
 .em-btn-w1 {
@@ -677,20 +677,25 @@ textarea {
   .natification {
     display: none;
   }
+
+  .content {
+    overflow: visible !important;
+  }
   .primy-w1 {
     display: block;
     font-size: 20px;
     margin-left: -20px;
-    margin-top: 89px;
+    margin-top: 20px;
+
   }
   .back__img {
     margin-left: -11px;
-    margin-top: 13px;
+    margin-top: -15px;
   }
 
   .menu-dots {
     display: block;
-    margin-top: 83px;
+    margin-top: -60px;
     font-weight: 900;
   }
   .button-em.show-buttons {

@@ -247,6 +247,15 @@
 .service-text{
   margin-bottom: 80px;
 }
+.primy-w1{
+  display: block !important;
+}
+.content-list {
+  margin-top: 0 !important;
+}
+.primy-w1{
+  margin-left: -150px;
+}
 }
 
 @media (max-width: 425px) {

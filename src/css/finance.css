@@ -57,10 +57,7 @@ dwasad
   display: flex;
   column-gap: 20px;
 }
-.content-list{
-  max-width: 1080px !important;
 
-}
 .statistic__block {
   border-radius: 14px;
   padding: 16px;
@@ -91,9 +88,7 @@ dwasad
   margin-top: -148px;
 }
 
-.button-info{
-  margin-top: 110px;
-}
+
 .client__statistic {
   display: flex;
   justify-content: space-between;
@@ -204,6 +199,9 @@ dwasad
   }
   .primy-w1{
     display: block;
+    margin-top: 60px;
+    text-align: start;
+    margin-left: -150px;
   }
   .button-info {
     position: absolute;

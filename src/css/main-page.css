@@ -224,7 +224,10 @@
     padding:  0 15px;
   }.calendar{
     width: 100%;
-    margin-left: 25px !important;
+
+  }
+  .primy-w1{
+display: none;
   }
 
   .content-list{

@@ -164,6 +164,9 @@ table tbody tr th {
   .order-gtd{
     border: none;
   }
+  .primy-w1{
+    display: none;
+  }
   .order-nav{
     margin-top: 20px;
     display: flex !important;

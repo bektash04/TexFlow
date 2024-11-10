@@ -20,12 +20,15 @@
   --font5: "Roboto Mono", sans-serif;
   --font6: "Krona One", sans-serif;
 }
-.card-back {
-  margin-top: 66px;
-  margin-left: 30px;
-  margin-bottom: 20px;
-}
 
+.container{
+  position: relative;
+}
+.card-back{
+  position: absolute;
+  top: -2%;
+  left: 3%;
+}
 .primy-titile {
   font-family: var(--font-family);
   font-weight: 700;
@@ -37,6 +40,8 @@
   display: flex;
   column-gap: 20px;
 }
+
+
 .menu-dots {
   display: none;
   cursor: pointer;

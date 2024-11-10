@@ -22,7 +22,6 @@
 }
 
 .content-name {
-  margin-top: 120px;
   margin-left: -40px;
 }
 .story-manager {
@@ -68,7 +67,7 @@
   color: var(--prozrachnyy-rozovyy);
 }
 .content-back {
-  margin-top: 75px;
+  margin-top: -55px;
 }
 .content-list {
   width: 1060px;
@@ -291,6 +290,10 @@
  .block-title{
   font-size: 20px;
   margin-top: -150px;
+ }
+
+ .content-name{
+  display: block !important;
  }
 }
 
